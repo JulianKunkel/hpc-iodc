@@ -24,6 +24,8 @@
 
 \begin{document}
 
+% PAGE LIMIT: full paper 10-16 pages
+
 \author{Julian M. Kunkel\footnote{\label{dkrz}Deutsches Klimarechenzentrum (DKRZ), Hamburg, Germany}, 
 Jay Lofstead\footnote{Center for Computing Research, Sandia National Laboratories, Albuquerque, USA}, 
 Colin McMurtrie\footnote{Swiss National Computing Center (CSCS), Lugano, Switzerland}, 
@@ -36,20 +38,149 @@ PLEASE ADD YOURSELF
 \begin{abstract}
 
 \noindent
-\keywords{Parallel I/O, data center}
+\keywords{Parallel I/O, data center, file systems, managing data}
 \end{abstract}
 
 % -----------------------------------------------------------------------
 \section{Introduction}
 \label{sec:intro}
 
+\cite{DOEExa13}
 
-\noindent
+The DOE recognizes the importance of data management, listing it among the top 10 research challenges for Exascale \cite{top14}.
+It says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+
+The complexity of the storage hierachy is increasing with the adoption of SSD and memory class storage technology.
+Burden to data centers to make right choices...
+
+Initiatives and consortia, 
+Exascale10 workgroup \cite{brinkmann14},
+Parallel Data Storage Workshop (PDSW), 
+Big Data and Extreme-Scale Computing (BDEC), http://www.exascale.org/bdec/
+HEC FSIO workshop \cite{bancroft2009} between 2005 and 2011, 
+smaller workshops such as Clustor, 
+
+Storage Networking Industry Association (SNIA) for enterprise
+special tracks in conferences.
+
+In 2013, an article was published that summarizes commercial data centers' dimensions \cite{data13}.
+Facebook around 100\,PB of storage. Google and Microsoft hosted around 1 Million servers.
+
+Global installed data storage capacity to hit 7,235 exabytes by 2017
+\cite{http://dailyindependentnig.com/2013/10/global-installed-data-storage-capacity-to-hit-7235-exabytes-by-2017-report/}
+
+Within 5 years Seagate shipped 1 billion HDDs, 700k every day 
+\cite{Storage Solutions Guide - Seagate / http://www.seagate.com/files/www-content/product-content/_cross-product/en-us/docs/seagate-storage-and-application-guide-apac.pdf}
+With state-of-the-art 8\,TB disks, this would already account for 5.5 Exabyte capacity by day.
+
+Studies of I/O workloads. In \cite{luu2015multiplatform}, logs automatically captured with the Darshan tool are analyzed.
+
+Studies: Software-Defined storage
+\cite{http://datacore.com/sf-docs/default-source/whitepapers/english/the-state-of-sds-2015-survey.pdf}
+
+cloud storage
+\cite{http://www.ctera.com/enterprise-cloud-storage-survey-2015}
+Siehe auch http://www.prnewswire.com/news-releases/2015-ctera-enterprise-cloud-storage-survey-highlights-data-governance-and-security-concerns-continuing-preference-for-private-and-virtual-private-clouds-300092189.html
+
+Enterprise Storage Services Survey
+\cite{http://www.idc.com/getdoc.jsp?containerId=254468}
+
+Typically focus on the application, while we focus on the data center's perspectives.
+
+Summary of the HPC-IODC workshop at ISC...
+Contributions:
+- contemporary survey of data center perspectives:
+workloads, system view: utilization, monitoring, issues in production systems and needed R\&DE and potential solutions.
+
+\section{Participating Data Centers}
+\label{sec:centers}
+
+\textit{Use this section as brief advertisement for all data centers and include a short description about key workloads.}
+An overview of the characteristics of the data centers is given in \Cref{tbl:overviewCharacteristics}.
+The I/O systems of the current supercomputers are characterized in \Cref{tbl:overviewIO}.
 
 
-\section{Summary, Conclusions and Future Work}
+\paragraph{DKRZ}
+Typical workloads.
+
+\paragraph{CSCS}
+
+\paragraph{HLRS}
+Hornet
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[bt]
+\renewcommand{\arraystretch}{0.8}
+\renewcommand{\tabcolsep}{0.1cm}
+\begin{tabular}[c]{ll|r|r|r|r||r||r|r}
+Center & Top    & \multicolumn{4}{c||}{Compute}      & \multicolumn{1}{c||}{Network}               & \multicolumn{2}{c}{Archive} \\
+ & system & Peak perf. & Node cnt & Cores/Node & Total mem & Type                 & Tape slots & Peak perf. \\ \hline
+ \hline
+
+DKRZ & Mistral & 1.49\,PF   & 1500       & 24         & IB FDR                     & 65,000 & XY\,MiB/s \\ \hline
+Sandia & Sky Brige & 615\,TF   & Intel Truscale \\ \hline
+CSCS & Piz Daint & 7.79\,PF & Cray Aries \\ \hline
+HLRS & Hornet & 3.79\,PF & 3944 & 24 & 493 TB & Cray Aries &   \\ \hline
+% CSCS & 
+
+\end{tabular}
+\caption{Data center system characteristics\label{tbl:overviewCharacteristics}}
+\end{table}
+
+\begin{table}[bt]
+\renewcommand{\arraystretch}{0.8}
+\renewcommand{\tabcolsep}{0.1cm}
+\begin{tabular}[c]{l|r|r|r|r|r|r|r}
+Center & Type        & Capacity  & Peak perf.     & Server cnt & File systems & File count    & Avg file size    \\ \hline
+DKRZ   & Lustre\,2.5 & 20\,PB    & 313\,GiB/s     & 60         & 1            &               &                  \\ \hline
+HLRS   & Lustre  & 8.1\,PB       & 150\,GiB/s     & 112        & 7            & 3.5\,M        & 
+% CSCS &
+
+\end{tabular}
+\caption{Data center storage characteristics\label{tbl:overviewIO}}
+\end{table}
+
+\section{Managing Storage}
+
+Concepts.
+DKRZ: Scratch, Work, Projects
+DNE issues
+
+HLRS: Work Space mechanism
+• A directory in the project file system is created upon request
+with a user defined name
+• The directory is available for 30 days
+• The directory life time can be extended 3 times by 30 days
+• At the end of life, the directory with its content!!! is
+automatically deleted
+• There are tools for
+– finding available workspaces
+– Releasing workspaces
+– Setting a reminder in calender tools
+• Quota is enabled
+
+
+\section{Monitoring}
+\label{sec:monitoring}
+Key issue.
+
+
+\section{Production Issues}
+\label{sec:issues}
+
+Lustre:
+- DNE issues
+- High-level APIs such as NetCDF and HDF5 perform suboptimal, roughly 10\% of peak.
+- Quota
+- Full OSTs
+
+\section{Conducted R\&D}
+\label{sec:randd}
+
+\section{Summary, Conclusions}
 \label{sec:summary}
-
 
 
 \ack{%
