@@ -45,57 +45,46 @@ PLEASE ADD YOURSELF
 \section{Introduction}
 \label{sec:intro}
 
-\cite{DOEExa13}
+Many public and private funded data centers host supercomputers for running large scale simulations and analysis of experimental and observational data.
+Those supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
+In contrast, commercial data centers such as Facebook and Google execute loosely coupled workloads and can tolerate failures much easier.
+The dimension of the data centers is enormous.
+In 2013, an article was published that summarizes commercial data centers' dimensions\,\cite{data13}, it estimates, for example, that 
+Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 Million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
+With the hunger for information, the globally installed storage capacity increases exponentially and is expected to hit 7,235 exabytes by 2017\,\cite{EXA13}.
+This trend can also be seen in the sale reports of companies such as the disk drive manufactorer Seagate; within 5 years they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.  
+With state-of-the-art 8\,TB disks, this would already account for 5.5 exabyte of capacity by day.
 
-The DOE recognizes the importance of data management, listing it among the top 10 research challenges for Exascale \cite{top14}.
-It says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+Management of the huge amount of data is vital for effective use of the contained information, however, with limited budget, it is a daunting task for data centers.
+Especially as design and hardware required for the storage system depends heavily on the executed workloads.
+A co-factor of the increasing difficulty is the increase in complexity of the storage hierachy with the adoption of SSD and memory class storage technology.
+The department of energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
 
-The complexity of the storage hierachy is increasing with the adoption of SSD and memory class storage technology.
-Burden to data centers to make right choices...
+There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
+Examples are the Storage Networking Industry Association (SNIA) for enterprises, the 
+Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the 
+Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop (PDSW), the HEC FSIO workshop \cite{bancroft2009} and the HPC-IODC workshop\,\cite{iodc}.
 
-Initiatives and consortia, 
-Exascale10 workgroup \cite{brinkmann14},
-Parallel Data Storage Workshop (PDSW), 
-Big Data and Extreme-Scale Computing (BDEC), http://www.exascale.org/bdec/
-HEC FSIO workshop \cite{bancroft2009} between 2005 and 2011, 
-smaller workshops such as Clustor, 
+There are also many studies of I/O workloads and performance analysis reports for parallel I/O available.
+Additionally, many surveys of usage of enterprise technology are made including predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
+However, analysis conducted for HPC typically focus on applications and not on the data center perspective.
+Information about operational aspects of data centers is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
 
-Storage Networking Industry Association (SNIA) for enterprise
-special tracks in conferences.
+% In \cite{luu2015multiplatform}, logs automatically captured with the Darshan tool are analyzed.
+%Studies: Software-Defined storage
+%\cite{http://datacore.com/sf-docs/default-source/whitepapers/english/the-state-of-sds-2015-survey.pdf}
+%cloud storage
+%\cite{http://www.ctera.com/enterprise-cloud-storage-survey-2015}
+%Siehe auch http://www.prnewswire.com/news-releases/2015-ctera-enterprise-cloud-storage-survey-highlights-data-governance-and-security-concerns-continuing-preference-for-private-and-virtual-private-clouds-300092189.html
 
-In 2013, an article was published that summarizes commercial data centers' dimensions \cite{data13}.
-Facebook around 100\,PB of storage. Google and Microsoft hosted around 1 Million servers.
-
-Global installed data storage capacity to hit 7,235 exabytes by 2017
-\cite{http://dailyindependentnig.com/2013/10/global-installed-data-storage-capacity-to-hit-7235-exabytes-by-2017-report/}
-
-Within 5 years Seagate shipped 1 billion HDDs, 700k every day 
-\cite{Storage Solutions Guide - Seagate / http://www.seagate.com/files/www-content/product-content/_cross-product/en-us/docs/seagate-storage-and-application-guide-apac.pdf}
-With state-of-the-art 8\,TB disks, this would already account for 5.5 Exabyte capacity by day.
-
-Studies of I/O workloads. In \cite{luu2015multiplatform}, logs automatically captured with the Darshan tool are analyzed.
-
-Studies: Software-Defined storage
-\cite{http://datacore.com/sf-docs/default-source/whitepapers/english/the-state-of-sds-2015-survey.pdf}
-
-cloud storage
-\cite{http://www.ctera.com/enterprise-cloud-storage-survey-2015}
-Siehe auch http://www.prnewswire.com/news-releases/2015-ctera-enterprise-cloud-storage-survey-highlights-data-governance-and-security-concerns-continuing-preference-for-private-and-virtual-private-clouds-300092189.html
-
-Enterprise Storage Services Survey
-\cite{http://www.idc.com/getdoc.jsp?containerId=254468}
-
-Typically focus on the application, while we focus on the data center's perspectives.
-
-Summary of the HPC-IODC workshop at ISC...
-Contributions:
-- contemporary survey of data center perspectives:
-workloads, system view: utilization, monitoring, issues in production systems and needed R\&DE and potential solutions.
+In this paper, we present a contemporary overview of several data centers that participated in the HPC-IODC workshop 2015.
+The centers provide a system perspective about storage architectures, strategies for data mangement and production issues but also conducted RD\& to overcome the current obstacles.
 
 \section{Participating Data Centers}
 \label{sec:centers}
 
-\textit{Use this section as brief advertisement for all data centers and include a short description about key workloads.}
+\textbf{We'll use this section as brief advertisement for all data centers and include a short description about key workloads.}
+
 An overview of the characteristics of the data centers is given in \Cref{tbl:overviewCharacteristics}.
 The I/O systems of the current supercomputers are characterized in \Cref{tbl:overviewIO}.
 
@@ -144,9 +133,10 @@ HLRS   & Lustre  & 8.1\,PB       & 150\,GiB/s     & 112        & 7            & 
 
 \section{Managing Storage}
 
-Concepts.
-DKRZ: Scratch, Work, Projects
-DNE issues
+To utilize storage efficiently, data centers have to decide concepts and policies for the data lifecycle of users.
+This includes, for example, quota restrictions and the partioning of the available hardware into usable file systems.
+
+DKRZ: Split into Scratch, Work, Projects. One Pool for Lustre. DNE-phase 1 distributes the top level directories among the metadata servers.
 
 HLRS: Work Space mechanism
 • A directory in the project file system is created upon request
@@ -164,7 +154,9 @@ automatically deleted
 
 \section{Monitoring}
 \label{sec:monitoring}
-Key issue.
+
+The monitoring of a shared resource such as a file system is vital to ensure a fair distribution of resources and to identify bottlenecks in hardware and software.
+
 
 
 \section{Production Issues}
@@ -178,6 +170,8 @@ Lustre:
 
 \section{Conducted R\&D}
 \label{sec:randd}
+
+Investigation of alternative storage e.g. for workloads with random-access characteristics.
 
 \section{Summary, Conclusions}
 \label{sec:summary}
