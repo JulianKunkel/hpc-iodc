@@ -45,30 +45,30 @@ PLEASE ADD YOURSELF
 \section{Introduction}
 \label{sec:intro}
 
-Many public and private funded data centers host supercomputers for running large scale simulations and analysis of experimental and observational data.
-Those supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
-In contrast, commercial data centers such as Facebook and Google execute loosely coupled workloads and can tolerate failures much easier.
+Many public and privately funded data centers host supercomputers for running large scale simulations and analyzing experimental and observational data.
+These supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
+In contrast, commercial data centers, such as Facebook and Google, execute loosely coupled workloads with a broad assumption of regular failures.
 The dimension of the data centers is enormous.
-In 2013, an article was published that summarizes commercial data centers' dimensions\,\cite{data13}, it estimates, for example, that 
-Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 Million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
+A 2013 article summarizes commercial data centers' dimensions\,\cite{data13}. It estimates, for example, that 
+Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
 With the hunger for information, the globally installed storage capacity increases exponentially and is expected to hit 7,235 exabytes by 2017\,\cite{EXA13}.
-This trend can also be seen in the sale reports of companies such as the disk drive manufacturer Seagate; within 5 years they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.  
+This trend is visible in the sales reports of companies such as the disk drive manufacturer Seagate. Within 5 years, they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.  
 With state-of-the-art 8\,TB disks, this would already account for 5.5 exabyte of capacity by day.
 
-Management of the huge amount of data is vital for effective use of the contained information, however, with limited budget, it is a daunting task for data centers.
-Especially as design and hardware required for the storage system depends heavily on the executed workloads.
+Management of the huge amount of data is vital for effective use of the contained information. However, with limited budgets, it is a daunting task for data center operators,
+especially as design and storage system required hardware depends heavily on the executed workloads.
 A co-factor of the increasing difficulty is the increase in complexity of the storage hierarchy with the adoption of SSD and memory class storage technology.
-The department of energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+The US Department of Energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
 
 There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
 Examples are the Storage Networking Industry Association (SNIA) for enterprises, the 
 Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the 
 Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop (PDSW), the HEC FSIO workshop \cite{bancroft2009} and the HPC-IODC workshop\,\cite{iodc}.
 
-There are also many studies of I/O workloads and performance analysis reports for parallel I/O available.
-Additionally, many surveys of usage of enterprise technology are made including predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
-However, analysis conducted for HPC typically focus on applications and not on the data center perspective.
-Information about operational aspects of data centers is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
+There are many I/O workloads studies and performance analysis reports for parallel I/O available.
+Additionally, many surveys of enterprise technology usage include predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
+However, analysis conducted for HPC typically focuses on applications and not on the data center perspective.
+Information about data center operational aspects is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
 
 % In \cite{luu2015multiplatform}, logs automatically captured with the Darshan tool are analyzed.
 %Studies: Software-Defined storage
@@ -101,7 +101,17 @@ The storage system provided by Seagate is a ClusterStor 9000 with Lustre.
 Since climate research is a data intensive science, huge quantities of data need to be preserved and analyzed.
 Therefore, DKRZ offers a big tape archive managed via HPSS.
 
-
+\paragraph{Sandia National Laboratories}
+Sandia's compute environment is partially shared with Los Alamos National
+Laboratories. Leadership machines are joint acquisitons hosted at Los Alamos,
+but accessible from both Sandia and Los Alamos. The current leadership machine,
+Cielo, debuted at number six on the top 500 list in June 2011. A replacement,
+Trinity, platform is currently being deployed that will once again debut in the
+top 10.  The primary computing mission for these machines is to support the
+National Nuclear Security Agency weapons safety and maintenance simulation
+needs.  Additional use for ancillary, but related uses is also supported.
+Sixteen additional clusters of various sizes support development and other
+research needs. These machines are split into both capability and capacity use.
 
 \paragraph{CSCS}
 
@@ -119,7 +129,7 @@ Center & Top    & \multicolumn{4}{c||}{Compute}      & \multicolumn{1}{c||}{Netw
  \hline
 
 DKRZ & Mistral & 1.49\,PF   & 1500       & 24         & 120\,TB  & IB FDR     & 65,000 & 15\,GiB/s \\ \hline
-Sandia & Sky Brige & 615\,TF   & Intel Truscale \\ \hline
+Sandia & Cielo & 1.365\,PF & 8894 & 16 & 297 TB & Cray Gemini & \\ \hline
 CSCS & Piz Daint & 7.79\,PF & Cray Aries \\ \hline
 HLRS & Hornet & 3.79\,PF & 3944 & 24 & 493 TB & Cray Aries &   \\ \hline
 % CSCS & 
@@ -155,6 +165,13 @@ The scratch space has a more generous quota but is purged periodically from old 
 To transfer data between storage and tape archive, users have to use e.g. PFTP to transfer data, this explicit management actually reduced the required capacity and performance significantly.
 Due to the data volume, only the home directories are backed up.
 Since many files are rather small, by default we use only 1 Lustre stripe.
+
+\paragraph{Sandia National Laboratories}
+Scratch storage space is split into three separate Lustre file systems. Home
+directories are shared among all Los Alamos hosted HPC clusters and machines.
+A 500 MB limit is imposed on home directories. For short term use, there is no
+limit to scratch space use. Purge proceses are invoked when the storage system
+reaches capacity usage thresholds.
 
 
 \paragraph{HLRS}
