@@ -1,0 +1,233 @@
+\documentclass{superfri}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{babel}
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[list=true,hypcap=true]{subcaption}
+\usepackage{units}
+\usepackage{xfrac}
+\usepackage{color}
+
+\usepackage{varioref}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref} % Version 0.18.10
+
+\bibliographystyle{plain}
+\numberwithin{equation}{section}
+
+
+\begin{document}
+
+TODO...
+% PAGE LIMIT: full paper 10-16 pages
+
+\author{Julian M. Kunkel\footnote{\label{dkrz}Deutsches Klimarechenzentrum (DKRZ), Hamburg, Germany}, 
+Jay Lofstead\footnote{Center for Computing Research, Sandia National Laboratories, Albuquerque, USA}, 
+Colin McMurtrie\footnote{Swiss National Computing Center (CSCS), Lugano, Switzerland}, 
+PLEASE ADD YOURSELF
+} % \footnoteref{dkrz}
+
+\title{Data Center Perspectives on HPC-IO}
+\maketitle{}
+
+\begin{abstract}
+
+\noindent
+\keywords{Parallel I/O, data center, file systems, managing data}
+\end{abstract}
+
+% -----------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Many public and privately funded data centers host supercomputers for running large scale simulations and analyzing experimental and observational data.
+These supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
+In contrast, commercial data centers, such as Facebook and Google, execute loosely coupled workloads with a broad assumption of regular failures.
+The dimension of the data centers is enormous.
+A 2013 article summarizes commercial data centers' dimensions\,\cite{data13}. It estimates, for example, that 
+Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
+With the hunger for information, the globally installed storage capacity increases exponentially and is expected to hit 7,235 exabytes by 2017\,\cite{EXA13}.
+This trend is visible in the sales reports of companies such as the disk drive manufacturer Seagate. Within 5 years, they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.  
+With state-of-the-art 8\,TB disks, this would already account for 5.5 exabyte of capacity by day.
+
+Management of the huge amount of data is vital for effective use of the contained information. However, with limited budgets, it is a daunting task for data center operators,
+especially as design and storage system required hardware depends heavily on the executed workloads.
+A co-factor of the increasing difficulty is the increase in complexity of the storage hierarchy with the adoption of SSD and memory class storage technology.
+The US Department of Energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+
+There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
+Examples are the Storage Networking Industry Association (SNIA) for enterprises, the 
+Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the 
+Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop (PDSW), the HEC FSIO workshop \cite{bancroft2009} and the HPC-IODC workshop\,\cite{iodc}.
+
+There are many I/O workloads studies and performance analysis reports for parallel I/O available.
+Additionally, many surveys of enterprise technology usage include predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
+However, analysis conducted for HPC typically focuses on applications and not on the data center perspective.
+Information about data center operational aspects is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
+
+% In \cite{luu2015multiplatform}, logs automatically captured with the Darshan tool are analyzed.
+%Studies: Software-Defined storage
+%\cite{http://datacore.com/sf-docs/default-source/whitepapers/english/the-state-of-sds-2015-survey.pdf}
+%cloud storage
+%\cite{http://www.ctera.com/enterprise-cloud-storage-survey-2015}
+%Siehe auch http://www.prnewswire.com/news-releases/2015-ctera-enterprise-cloud-storage-survey-highlights-data-governance-and-security-concerns-continuing-preference-for-private-and-virtual-private-clouds-300092189.html
+
+In this paper, we present a contemporary overview of several data centers that participated in the HPC-IODC workshop 2015.
+The centers provide a system perspective about storage architectures, strategies for data management and production issues but also conducted RD\& to overcome the current obstacles.
+
+\section{Participating Data Centers}
+\label{sec:centers}
+
+\textbf{We'll use this section as brief advertisement for all data centers and include a short description about key workloads.}
+
+An overview of the characteristics of the data centers is given in \Cref{tbl:overviewCharacteristics}.
+The I/O systems of the current supercomputers are characterized in \Cref{tbl:overviewIO}.
+
+\paragraph{DKRZ}
+The German Climate Computing Center (DKRZ) is a publicly funded company 
+which goal is to support climate researchers.
+Therefore, on their HPC systems the execution is restricted to earth-system applications.
+Typically, these applications read some input data and use boundary conditions to predict the complex environmental models.
+The prediction is periodically output and then in a post-processing step some pre-defined analyses are conducted, then data is archived and preserved in a federated data archive. 
+Other researches may access the data, for example, to extract data from global models to conduct local analysis with higher resolution.
+In Q1/2015, the first phase of the Mistral supercomputer has been installed offering a huge storage capacity with decent 
+computation power.
+The storage system provided by Seagate is a ClusterStor 9000 with Lustre.
+Since climate research is a data intensive science, huge quantities of data need to be preserved and analyzed.
+Therefore, DKRZ offers a big tape archive managed via HPSS.
+
+\paragraph{Sandia National Laboratories}
+Sandia's compute environment is partially shared with Los Alamos National
+Laboratories. Leadership machines are joint acquisitons hosted at Los Alamos,
+but accessible from both Sandia and Los Alamos. The current leadership machine,
+Cielo, debuted at number six on the top 500 list in June 2011. A replacement,
+Trinity, platform is currently being deployed that will once again debut in the
+top 10.  The primary computing mission for these machines is to support the
+National Nuclear Security Agency weapons safety and maintenance simulation
+needs.  Additional use for ancillary, but related uses is also supported.
+Sixteen additional clusters of various sizes support development and other
+research needs. These machines are split into both capability and capacity use.
+
+\paragraph{CSCS}
+
+\paragraph{HLRS}
+Hornet
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[bt]
+\renewcommand{\arraystretch}{0.9}
+\renewcommand{\tabcolsep}{0.1cm}
+\begin{tabular}[c]{ll|r|r|r|r||r||r|r}
+Center & Top    & \multicolumn{4}{c||}{Compute}      & \multicolumn{1}{c||}{Network}               & \multicolumn{2}{c}{Archive} \\
+ & system & Peak perf. & Node cnt & Cores/Node & Total mem & Type                 & Tape slots & Peak perf. \\ \hline
+ \hline
+
+DKRZ & Mistral & 1.49\,PF   & 1500       & 24         & 120\,TB  & IB FDR     & 65,000 & 15\,GiB/s \\ \hline
+Sandia & Cielo & 1.365\,PF & 8894 & 16 & 297 TB & Cray Gemini & \\ \hline
+CSCS & Piz Daint & 7.79\,PF & Cray Aries \\ \hline
+HLRS & Hornet & 3.79\,PF & 3944 & 24 & 493 TB & Cray Aries &   \\ \hline
+% CSCS & 
+
+\end{tabular}
+\caption{Data center system characteristics\label{tbl:overviewCharacteristics}}
+\end{table}
+
+\begin{table}[bt]
+\renewcommand{\arraystretch}{0.9}
+\renewcommand{\tabcolsep}{0.1cm}
+\begin{tabular}[c]{l|r|r|r|r|r|r|r}
+Center & Type        & Capacity  & Peak perf.     & Server cnt & File systems & File count    & Avg file size    \\ \hline
+DKRZ   & Lustre\,2.5 & 20\,PB    & 313\,GiB/s     & 60         & 1            & 182\,M        & 41.8\,M           \\ \hline
+HLRS   & Lustre  & 8.1\,PB       & 150\,GiB/s     & 112        & 7            & 3.5\,M        & 
+% CSCS &
+
+\end{tabular}
+\caption{Data center storage characteristics\label{tbl:overviewIO}}
+\end{table}
+
+\section{Managing Storage}
+
+To utilize storage efficiently, data centers have to decide concepts and policies for the data lifecycle of users.
+This includes, for example, quota restrictions and the partioning of the available hardware into usable file systems.
+
+\paragraph{DKRZ}
+The available storage space is managed in one Lustre Pool and mounted as one file system that is split among three directories:
+scratch, work and home. 
+Utilizing Lustre's DNE-phase 1, individual user and work directories are distributed among five metadata servers.
+Each user has a quota on his home directory and consortia of multiple researchers are members of project that also come with their own resource limitations.
+The scratch space has a more generous quota but is purged periodically from old elements.
+To transfer data between storage and tape archive, users have to use e.g. PFTP to transfer data, this explicit management actually reduced the required capacity and performance significantly.
+Due to the data volume, only the home directories are backed up.
+Since many files are rather small, by default we use only 1 Lustre stripe.
+
+\paragraph{Sandia National Laboratories}
+Scratch storage space is split into three separate Lustre file systems. Home
+directories are shared among all Los Alamos hosted HPC clusters and machines.
+A 500 MB limit is imposed on home directories. For short term use, there is no
+limit to scratch space use. Purge proceses are invoked when the storage system
+reaches capacity usage thresholds.
+
+
+\paragraph{HLRS}
+Work Space mechanism
+• A directory in the project file system is created upon request
+with a user defined name
+• The directory is available for 30 days
+• The directory life time can be extended 3 times by 30 days
+• At the end of life, the directory with its content!!! is
+automatically deleted
+• There are tools for
+– finding available workspaces
+– Releasing workspaces
+– Setting a reminder in calender tools
+• Quota is enabled
+
+\paragraph{Cross-cutting aspects}
+
+Stuff that is relevant for all data centers?
+
+\section{Monitoring}
+\label{sec:monitoring}
+
+The monitoring of a shared resource such as a file system is vital to ensure a fair distribution of resources and to identify bottlenecks in hardware and software.
+
+
+\section{Production Issues}
+\label{sec:issues}
+
+DKRZ:
+Researchers use various post-processing tools and several file formats.
+Some file formats are quite old and their libraries lead to inefficient access patterns but they are needed for data exchange in consortia.
+
+Application-specific I/O servers
+
+Lustre:
+- DNE issues
+- High-level APIs such as NetCDF and HDF5 perform suboptimal, roughly 10\% of peak.
+- Quota
+- Full OSTs
+
+\section{Conducted R\&D}
+\label{sec:randd}
+
+Investigation of alternative storage e.g. for workloads with random-access characteristics.
+
+\section{Summary, Conclusions}
+\label{sec:summary}
+
+
+\ack{%
+\noindent
+Acknowledgment:}
+
+\bibliography{literature}
+
+
+\end{document}
