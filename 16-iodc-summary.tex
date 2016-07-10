@@ -1,0 +1,96 @@
+\documentclass{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref} % Version 0.18.10
+
+
+\begin{document}
+\mainmatter
+
+
+\author{Julian M. Kunkel, Jay Lofstead, Colin McMurtrie
+} 
+
+\title{HPC I/O in the Data Center Workshop (HPC-IODC)}
+
+\institute{
+	Deutsches Klimarechenzentrum\\
+	Bundesstraße 45a\\
+	20146 Hamburg\\
+	\email{kunkel@dkrz.de}
+}
+
+\maketitle{}
+
+%\begin{abstract}
+%This is the preface 
+%\noindent
+%\keywords{Parallel I/O, data center, file systems, managing data}
+%\end{abstract}
+
+% -----------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Many public and privately funded data centers host supercomputers for running large scale simulations and analyzing experimental and observational data.
+These supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
+In contrast, commercial data centers, such as Facebook and Google, execute loosely coupled workloads with a broad assumption of regular failures.
+The dimension of the data centers is enormous.
+A 2013 article summarizes commercial data centers' dimensions\,\cite{data13}. It estimates, for example, that 
+Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
+With the hunger for information, the globally installed storage capacity increases exponentially and is expected to hit 7,235 exabytes by 2017\,\cite{EXA13}.
+This trend is visible in the sales reports of companies such as the disk drive manufacturer Seagate. Within 5 years, they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.  
+With state-of-the-art 8\,TB disks, this would already account for 5.5 exabyte of capacity by day.
+
+Management of the huge amount of data is vital for effective use of the contained information. However, with limited budgets, it is a daunting task for data center operators,
+especially as design and storage system required hardware depends heavily on the executed workloads.
+A co-factor of the increasing difficulty is the increase in complexity of the storage hierarchy with the adoption of SSD and memory class storage technology.
+The US Department of Energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+
+There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
+Examples are the Storage Networking Industry Association (SNIA) for enterprises, the 
+Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the 
+Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop (PDSW), the HEC FSIO workshop \cite{bancroft2009} and the HPC-IODC workshop\,\cite{iodc}.
+
+There are many I/O workloads studies and performance analysis reports for parallel I/O available.
+Additionally, many surveys of enterprise technology usage include predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
+However, analysis conducted for HPC typically focuses on applications and not on the data center perspective.
+Information about data center operational aspects is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
+
+In this workshop we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues. 
+
+\section{Organization of the Workshop}
+
+\noindent The workshop content was built on two tracks:
+\begin{itemize}
+  \item Research paper presentation -- authors needed to submit a paper regarding relevant research for I/O in the datacenter.
+  \item Talks from I/O experts -- authors needed to submit a rough outline for the talk related to the operational aspects of the data center.
+\end{itemize}        
+    
+The CFP has been issued beginning of January.
+
+Paper Deadlines
+- Submission deadline: 28-02-2016 AoE
+- Author notification: 23-03-2016
+- Workshop: 23-05-2016
+- Camera-ready papers: 23-06-2016  
+
+
+
+
+\section{Workshop Summary}
+\label{sec:summary}
+
+
+\bibliographystyle{splncs03}
+\bibliography{literature}
+
+
+\end{document}
