@@ -67,6 +67,7 @@ Information about data center operational aspects is usually described in file s
 
 In this workshop, we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues. 
 
+
 \section{Organization of the Workshop}
 
 \noindent The workshop content was built on three tracks:
@@ -103,20 +104,67 @@ From all submissions, the programm committee selected four talks from I/O expert
 
 
 \section{Workshop Summary}
-
-The slides of the presentations are available on the workshop's webpage: \\ 
-\url{http://wr.informatik.uni-hamburg.de/events/2016/iodc}.
 \label{sec:summary}
 
-About 35 participants... success.. We will organize next year again...
+Throughout the day, on average 33 participants attended the workshop.
+We had a good mix of talks from I/O experts, data center relevant research and also discussions.
+A short summary of the presentations is given in the following.
+The slides of the presentations are available on the workshop's webpage: \\ 
+\url{http://wr.informatik.uni-hamburg.de/events/2016/iodc}.
 
-... some notes about each presentation...
+The keynote from Rob Ross advocated the use of tools to study I/O actities from the data center perspective.
+He presented results from I/O monitoring using Darshan, that point out the benefit of centralized monitoring.
+Also, he presented some studies with the I/O simulation tool Codes for understanding object storage and the dragon fly network topology.
+Finally, the recently started Tokio project is introduced that will lift I/O monitoring to a next level.
 
-\subsection{Results from the discussion rounds}
+\subsection{Research Papers}
 
-Community effort VI4IO (Julian)...
+In the research paper “Delta: Data Reduction for Integrated Application Workflows and Data Storage”, the ADIOS middleware is extended with a compression method.
+It compresses a time series of data with delta encoding by comparing data to the initial values.
+A result of the study is that already this approach reduces the data volume for in-situ analysis significantly for applications.
 
-Benchmarking / NVRAM (Jay)...
+In the second research paper “The Effect of Python and NetCDF on the Read Performance when using HPC Parallel Filesystems”, evaluates various aspects of NetCDF performance on several storage systems.
+It is shown that there are some issues in the Python libraries which reduce performance significantly.
+
+Next, in the paper “Analyzing Data Properties using Statistical Sampling Techniques“, a method is presented to evaluate data characteristics such as scientific file formats and compression ratio on a subset of data to estimate the value for the full system.
+It turns out, that a small subset of data is sufficient to predict the true value of characteristics that are computed by file numbers or storage capacity accurately.
+
+The last paper, “An Overview of the Sirocco Parallel Storage System”, introduces the Sirocco distributed object storage.
+In contrast to parallel file systems, the consistency model is relaxed and there is a-priori no explicit central index for the data. This allows writers to proceed independetly and even adjust their storage targets based on system utilization.
+
+\subsection{Talks from Experts}
+
+The four talks from experts included information about the site and typical application profiles but also contained information regarding I/O tools and strategies. 
+In the first talk, we heard about LRZ's storage system and strategy.
+Utilizing file system monitoring and the Persyst tool an overview of the bottleneck for an application is gained.
+Additionally, Darshan, Scalasca and VampirTrace is used for I/O characterisation and analysis.
+An emphasis was made to present and demonstrate a methodology to identify I/O bottlenecks that is applied in the data center with success.
+
+Then, we heard an update of HLRS data management plans.
+It was demonstrated, that the storage system's peak performance is barely utilized from typical applications.
+Additionally, potential strategies and architectures for a future system has been sketched relying on NVRAM.
+
+The next talk described I/O monitoring at Jülich Supercomputing Center.
+The LLview tool provides a good overview of ongoing jobs but also a history. 
+This includes system statistics and I/O activity and can be used to analyze the overall system behavior and utilization.
+Next, SIONlib has been introduced, which manages shared files for task-local data.
+Finally, the activities in the DEEP-ER project where described, in which SIONlib manages buddy checkpoints.
+
+Our final talk covered CSCS storage system and ...
+TODO: Colin....
+
+
+\subsection{Discussion rounds}
+
+
+The first discussion starter is based on the community effort of the Virtual Institute for I/O (VI4IO)~\footnote{\url{http://vi4io.org}}.
+VI4IO aims to provide a community hub containing research groups, relevant tools to monitor and benchmark HPC storage behavior, events. 
+Finally it hosts and manages the High-Performance Storage List (HPSL), which currently contains 30 high-performance storage systems including their characteristics.
+In contrast to existing lists, operators of a data center can create and manage the list themselves and can provide additional prosa text describing site, system and storage.
+Since it is very difficult to find detailed information about existing storage systems, there are still a lot of characteristics missing, still the first analysis of storage capacity have been made and presented during the talk.
+The discussion with the attendees revealed optimization potential in the presentation of the characteristics that are already resolved in the current list.
+
+TODO: Benchmarking / NVRAM (Jay)...
 
 
 
