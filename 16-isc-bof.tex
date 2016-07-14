@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 
-\title{VI4IO: The I/O Community Hosting the High-Performance Storage List}
+\title{VI4IO and the IO 500}
 \author{Julian Kunkel}
 
 \makeatletter
@@ -23,43 +23,48 @@
   \item Julian Kunkel (DKRZ, Germany), kunkel@dkrz.de
   \item Jay Lofstead (Sandia National Lab, USA), gflofst@sandia.gov
   \item Colin McMurtrie (CSCS, Switzerland), cmurtrie@cscs.ch
+  \item John Bent (Seagate Government Solutions), john.bent@seagategov.com 
 \end{itemize}
 
 
 \section{Short Abstract}  % 250 words maximum
-Due to the increasing complexity of data management in high-performance computing, the activities in the storage research community 
-increased over the last few years.
-In this BoF, the Virtual Institute for I/O (VI4IO), an international effort for the high-performance storage community is introduced and discussed with the participants.
-The community web page \url{http://vi4io.org} will be launched at ISC-HPC.
+Due to the increasing complexity of HPC data management, activities in the storage research community 
+have increased over the last few years.  The general purpose of this BoF is to foster this community and discuss 
+the role of the international Virtual Institute for I/O (VI4IO, \url{http://vi4io.org}) in supporting, developing, and maintaining this community.  
+A specific purpose of the BoF is
+to discuss whether the community would be well-served by an IO-500 benchmark similar to the Top-500. 
 
-The goals of the VI4IO community are:
-\begin{itemize}
-  \item To provide a platform for I/O researchers and enthusiasts for exchanging information.
-  \item To foster international collaboration in the field of high-performance I/O.
-  \item To track deployment of large storage systems by hosting of an open high-performance storage list.
-\end{itemize}
 
-In particular, it offers research groups and vendors the chance to describe their knowledge.
+\if 0
+In particular, 
+VI4IO offers research groups and vendors the chance to describe their knowledge.
 Furthermore, relevant I/O tools for, e.g., monitoring and benchmarking are described.
 All this information is characterized in meaningful categories and are visualized in tag clouds to simplify search.
-The High-Performance Storage List is introduced, similar to TOP500, this list maintains relevant storage systems and tracks their performance.
-Since I/O benchmarking is composed of many facets and usually very time consuming, tracked metrics are not handled as strict as for related lists.
-However, every site submitting a result is required to clearly describe the measurement conditions.
+\fi
 
-This open community is guided by philosophical cornerstones:
+VI4IO is committed to hosting a portal for storage benchmark results including
+forums in which researchers can share insights into benchmarking practices
+and share related IO tools such as for monitoring.  The exact form of these
+storage benchmarks is currently undecided.  One approach will be to allow the
+arbitrary submission of any benchmark result along with descriptive measurement
+conditions hopefully sufficient to enable reproducibility.  A more controversial approach is to
+create an IO-500 modeled after the Top-500.  
+We will present a straw-man proposal of an IO-500 to initiate a discussion about the best approach.
+
+VI4IO is guided by philosophical cornerstones and has the following goals:
 \begin{itemize}
-  \item To treat every member and participant equally.
-  \item To allow participation of everybody without a membership fee.
-  \item To be an independent organization, thus independent of vendors and research facilities.
+  \item Treat every member and participant equally
+  \item Allow free participation without any membership fees inclusive to all
+  \item Be independent of vendors and research facilities
+  \item Provide information exchanges for I/O researchers and enthusiasts 
+  \item Foster international collaboration in the field of high-performance I/O
+  \item Track, and encourage, the deployment of large storage systems by hosting storage benchmark results 
 \end{itemize}
-Thus, everybody will be invited to contribute to the community hub that is maintained as open wiki.
 
-In the BoF we give a short introductory presentation and then focus on introducing and discussing the community hub and the metrics of the HPSL list.
-We hope that this effort will contribute to accelerate I/O research and foster collaborations.
-
+Through this BoF, we hope to accelerate I/O research and foster collaborations.
 
 \section{Keywords} 
-Community building, parallel I/O, data center, storage performance, I/O tools
+Community building, parallel I/O, data center, storage performance, I/O tools, benchmarks
 
 
 \section{Targeted audience}
@@ -94,4 +99,9 @@ workshop program committees.
 
 \subsection{Colin McMurtrie}
 Colin McMurtrie is an Associate Director at CSCS, in Switzerland, where he is in charge of the Systems Integration group.  At CSCS since 2009, he managed the National Systems group for 4 years before moving into his current role.  Colin has experience with the management of large HPC systems in a production environment and has organised some targeted workshops relating to storage on HPC systems.
+
+\subsection{John Bent}
+As Chief Architect for Seagate Government Solutions, John Bent researches and designs storage systems necessary to support an exascale supercomputer.  His prior work
+includes building several burst buffer prototypes while working for EMC and the PLFS virtual file system that achieved orders of magnitude bandwidth improvements for parallel writes to a single file while working for Los Alamos National Lab.
+
 \end{document}
