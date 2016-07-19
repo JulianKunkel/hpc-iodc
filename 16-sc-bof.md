@@ -74,7 +74,11 @@ Sequence of presentations
 Not commercial
 
 #Description of the session format (Maximum 150 words)
-## Provide a short description on how you plan to organize the BOF session, to justify, clarify and expand on your selections in the "Session format" part of the submission. In your response, keep in mind the guidelines from the Call for BOFs about what is appropriate for an SC BOF.  [Note: BOF Meetings, please enter "N/A"]
+## Provide a short description on how you plan to organize the BOF session, to justify, clarify and expand on your selections in the "Session format" pa of the submission. In your response, keep in mind the guidelines from the Call for BOFs about what is appropriate for an SC BOF.  [Note: BOF Meetings, please enter "N/A"]
+
+The session leaders will give a series of talks followed by Q&A and audience discussion.
+Talk 1) An introductory presentation about the virtual institute as a presentation describing the philosophical cornerstones and the content of the community hub including the high-performance storage list and its current content. This concludes in the introduction of the website during which further details about the content is provided
+Talk 2) illustrates the difficulties of I/O benchmarking and discusses alternatives to establish a representative community benchmark for the IO-500.
 
 # BOFs at recent SCs
 No
