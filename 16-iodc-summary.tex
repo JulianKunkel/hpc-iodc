@@ -113,7 +113,7 @@ The slides of the presentations are available on the workshop's webpage: \\
 \url{http://wr.informatik.uni-hamburg.de/events/2016/iodc}.
 
 The keynote from Rob Ross advocated the use of tools to study I/O actities from the data center perspective.
-He presented results from I/O monitoring using Darshan, that point out the benefit of centralized monitoring.
+He presented results from I/O monitoring using Darshan, that point out the benefit of centralized monitoring and the continuing challenge to accurately monitor all I/O activity. Application authors use a much more extensive set of I/O interfances than expected making the job of understanding how to address I/O challenges even harder.
 Also, he presented some studies with the I/O simulation tool Codes for understanding object storage and the dragon fly network topology.
 Finally, the recently started Tokio project is introduced that will lift I/O monitoring to a next level.
 
@@ -144,6 +144,8 @@ Then, we heard an update of HLRS data management plans.
 It was demonstrated, that the storage system's peak performance is barely utilized from typical applications.
 Additionally, potential strategies and architectures for a future system has been sketched relying on NVRAM.
 
+The third talk described work on the SIRIUS US DOE funded storage stack and I/O reserach project. This project is relatively new and is seeking community feedback about the reserach plans. The current strategy is to spread a single data set across all available storage resources, organized by data utility. This will optimize the desired information density within the scare resources, such as NVM, while still offering full datasets. The audience seemed accepting of the approach and did not have any significant input to offer.
+
 The next talk described I/O monitoring at Jülich Supercomputing Center.
 The LLview tool provides a good overview of ongoing jobs but also a history. 
 This includes system statistics and I/O activity and can be used to analyze the overall system behavior and utilization.
@@ -156,6 +158,8 @@ TODO: Colin....
 
 \subsection{Discussion rounds}
 
+The major distinguishing feature for this workshop compared to other venues is the discussion rounds. The opportunity for themed, open discussions about issues both pressing and relevant to the data center community facilitates sharing experiences, solutions, and problems. The forum has lively discussion with few reservations about maintaining secrecy.
+
 
 The first discussion starter is based on the community effort of the Virtual Institute for I/O (VI4IO)~\footnote{\url{http://vi4io.org}}.
 VI4IO aims to provide a community hub containing research groups, relevant tools to monitor and benchmark HPC storage behavior, events. 
@@ -164,8 +168,40 @@ In contrast to existing lists, operators of a data center can create and manage 
 Since it is very difficult to find detailed information about existing storage systems, there are still a lot of characteristics missing, still the first analysis of storage capacity have been made and presented during the talk.
 The discussion with the attendees revealed optimization potential in the presentation of the characteristics that are already resolved in the current list.
 
-TODO: Benchmarking / NVRAM (Jay)...
-
+The second discussion was on the impact of Non-Volatile Memory (NVM) on storage
+activities. The current set of machines being deployed at supercomputing
+centers in the USA all have such a layer in the form of flash-based devices.
+The discussion centered around sereral topics: 1) the opportunity to pre-empt a
+running job on a node via swapping memory contents to a node local SSD to
+support urgent computation requirements is seen as a priority. There are
+serveral issues, such as security, that still need to be considered for this to
+be a viable idea. 2) The audidence agreed that NVM resources are most useful
+when they can be treated as either slow memory or fast storage, depending on
+application needs. Ideally, this will be supported on an
+application-by-application basis rather than requiring any system configuration
+changes. 3) The audidence agreed that because of the performance
+characteristics, it is important to have explicit use options. Some
+participants suggested that they would rather support invisible use, such as
+for a TLB swap space or have the software stack be able to predict which pages
+are no longer imminently needed and swap them for those that are. How to do
+this effectively was unknown. 4) The concept of the burst buffer offering the
+fast cache for the file system was universally acknowledged to not be able to
+address the I/O performance issues. The key issue is that, as last year's
+workshop revealed, the major concern is the use of I/O libraries like NetCDF
+and HDF5 and the very low I/O performance they obtain in their default
+configuration. Multiple other pieces of research have shown that the overheads
+involved in the data rearrangement phase of two-phase collective I/O with data
+sieving can completely dominate, on the order of 99\% of the I/O time. Until
+this issue is solved, accelerating the bandwidth to the storage array will not
+address the performance issues. 5) Having NVM in multiple locations, such as
+compute area as well as on every node, is seen as critical for performance.
+Interference effects that plague our current storage arrays will still exist
+for NVM sources making only having centralized resources problematic. And 6)
+Because the hardware is evolving so rapidly and how and where the NVM is
+deployed in machines, the software interface is largely undefineable. Until the
+locations and hardware interfaces settle down, the best we can hope to do is to
+have solutions to address a single platform generation with the expectation it
+may have to be completely rethought for the next generation.
 
 
 \bibliographystyle{splncs}
