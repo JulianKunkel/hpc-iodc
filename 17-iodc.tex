@@ -1,0 +1,141 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{HPC I/O in the Data Center\\ {\normalsize 3nd HPC-IODC Workshop}}
+\author{Julian Kunkel \and Jay Lofstead \and Colin McMurtrie}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5em}
+
+\usepackage{url}
+
+\begin{document}
+
+\maketitle
+
+\section{Workshop Organizer Information}
+
+\subsection{Dr. Julian Kunkel}
+% Contact data as needed by the form
+% Dr. Julian Kunkel (DKRZ, Germany), kunkel@dkrz.de
+
+Dr. Julian Kunkel is post-doc in the group Scientific Computing at the DKRZ.
+Since 2006, Julian has been working on tracing environments and tools for client and server-side I/O.
+Julian is responsible for the University of Hamburg's contributions to several funded projects.  
+Besides his main goal to provide efficient and performance-portable I/O, his HPC-related interests are: data reduction techniques, performance analysis of parallel applications and parallel I/O, management of cluster systems, cost-efficiency considerations, and software engineering of scientific software.
+
+
+\subsection{Dr. Jay Lofstead}
+% Contact data as needed by the form
+% Dr. Jay Lofstead (Sandia National Lab, USA), gflofst@sandia.gov
+
+Dr. Jay Lofstead is a Principal Member of Technical Staff at Sandia National
+Laboratories in Albuquerque, New Mexico. Since 2010, Jay has been working on
+HPC simulation workflows focusing on data management issues and as well as
+general I/O and storage issues for HPC.  His prior work includes the R\&D100
+Award winning ADIOS I/O componentization framework in use in more than 30
+production scientific simulations. He is a member of several conference and
+workshop program committees.
+
+\subsection{Colin McMurtrie}
+% Contact data as needed by the form
+% Colin McMurtrie (CSCS, Switzerland), cmurtrie@cscs.ch
+
+Colin McMurtrie is an Associate Director at CSCS, in Switzerland, where he is in charge of the Systems Integration group.  At CSCS since 2009, he managed the National Systems group for 4 years before moving into his current role.  Colin has experience with the management of large HPC systems in a production environment and has organised some targeted workshops relating to storage on HPC systems.
+
+
+\section{Abstract} 
+Managing scientific data at large scale is challenging for scientists but also for the host data center.
+The storage and file systems deployed within a data center are expected to meet users' requirements for data integrity and high performance across heterogeneous and concurrently running applications. 
+
+With new storage technologies and layers in the memory hierarchy, the picture is becoming murkier. 
+To effectively manage the data load within a data center, I/O experts must understand how users expect to use these new storage technologies and what services they should provide in order to enhance user productivity. We seek to ensure a systems-level perspective is included in these discussions.
+
+In this workshop we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues. 
+To focus on relevant aspects and streamline the discussion, a list of relevant topics is provided as common structure of the talks. 
+Scientific papers related to the topic are welcome for submission.
+For further information regarding participation, the topics and the mailing list, see \url{http://wr.informatik.uni-hamburg.de/events/2017/iodc}
+
+\section{Keywords} 
+Data center, File systems, Storage, Performance, Architecture
+
+\section{Workshop length}
+Full day % I hope for! We could also go to half-day the first time to see..
+
+\section{Workshop webpage}
+\url{http://wr.informatik.uni-hamburg.de/events/2017/iodc}
+
+
+\section{Targeted audience}
+\begin{itemize}
+\item I/O experts from data centers and industry.
+\item Researchers/Engineers working on high-performance I/O for data centers.
+\item Interested domain scientists and computer scientists interested in discussing I/O issues.
+\item Vendors are also welcome, but their presentations must align with the same topics and not focus on commercial aspects.
+\end{itemize}
+
+
+
+
+\section{Estimated attendance}
+Between 20 and 50
+
+\section{Early Acceptance}
+
+We will contribute to the joint Springer LNCS post-conference proceedings.
+
+
+
+
+\section{Workshop format}
+The workshop content is structured in three parts,
+firstly, a keynote, secondly, short research paper presentations and, lastly, talks from I/O experts.
+Researchers and I/O experts can submit their proposals for a paper or talk according to a call for participation for papers and speakers.
+
+To increase the participation, firstly, we will actively invite representatives of different data centers and representatives of active workflow users/developers to give a talk and/or submit short papers regarding recent issues.
+Secondly, we will announce the workshop on typical mailing lists and send the call for participation.
+
+We will provide a common list of topics to be addressed in each I/O expert's talk, such that the individual presentations are aligned.
+
+
+\section{Previous Instances}
+We held this workshop at ISC 2015 with approximately 30 attendees, 10 invited presentations, and two discussion sessions. 
+In 2016, the workshop format was changed, in addition to the expert talks, we added a research section allowing submission of short scientific papers and a keynote talk. 
+The attendance to the workshop was similar to 2015, but finally we accepted four research papers.
+
+
+\section{Expected outcome}
+1) The networking among the participants will be improved.
+Additional measures for community building will be provided, a web site linking all participants and a mailing list for I/O experts in the data center will be established, if the workshop is accepted.
+
+2) We contribute a summarizing workshop paper to ISC's post-conference workshop proceedings in LNCS.
+
+\section{Details on the Call for Papers}
+
+We accept short papers with up to 10 pages (excl. references) in LNCS format.
+Our targeted proceedings are ISC's post-conference workshop proceedings in Springers LNCS.
+We will use Easy-chair for managing the proceedings and PC interaction.
+
+Expected number of papers: We expect 10 submissions. With an acceptance rate of 50\%, we aim to fill at least half of the presentation slots with papers.
+
+\paragraph{Schedule:}
+\begin{itemize}
+  \item Announcement/CfP: As soon as workshop notifications are sent by ISC
+  \item Submission deadline: 28-03-2017
+  \item Author notification: 25-04-2017
+  \item Workshop: 22-06-2017
+  \item Camera-ready papers: 22-07-2016 \footnote{As they are needed for ISC's post-conference workshop proceedings. We embrace the chance for authors to improve their papers based on the feedback received during the workshop.}
+\end{itemize}
+Note that our call for speakers follows a similar schedule, but they'll have to submit only a talk abstract and a brief bio.
+
+Program committee:
+We will extend the previous year's committee slightly, see: \url{https://wr.informatik.uni-hamburg.de/events/2016/iodc}.
+Guiding principles for inviting PC members are the geographically distribution of them and at most one PC per institution/organization.
+
+
+\end{document}
