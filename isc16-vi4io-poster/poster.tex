@@ -124,8 +124,7 @@ The Virtual Institute for I/O aims to provide a hub for the community and partic
 Additionally, we host the \textbf{high-performance storage list}. Similarly to the top500, it contains information about supercomputers and their storage systems.
 Additionally, in the community, we are working on standardizing an I/O benchmark.
 
-This poster introduces the Virtual Institute for I/O, the high-performance storage list and the effort for the IO-500.
-
+This poster introduces the Virtual Institute for I/O, the high-performance storage list and the effort for the IO-500 which are unfunded community projects.
 \end{posterbox}
 
 
@@ -189,55 +188,83 @@ Supported components:
 
 Conceptual example:
 
+\vspace*{-1em}
+\begin{center}
 \includegraphics[width=0.9\textwidth]{model}
+\end{center}
 
-\vspace*{-4em}
+\vspace*{-5em}
 
 The web page allows the creation of a topology for the facility to indicate the relation between the components.
 An example for DKRZ:
 
-\includegraphics[width=\textwidth]{dkrz-site}
+\vspace*{-1em}
 
-
-\end{posterbox}
-
-
-
-\begin{posterbox}[name=concept,column=1,span=2]{High-Performance Storage List}
-\end{posterbox}
-
-
-\begin{posterbox}[name=schedule,column=1,span=2, below=concept]{Schedule}
-
-\end{posterbox}
-
-\begin{posterbox}[name=HHCC,column=1,span=2, below=schedule, above=bottom]{Hamburg HPC Competence Center}
-\end{posterbox}
-
-
-
-
-\begin{posterbox}[name=engineering,column=3]{Performance Engineering}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{dkrz-site}
+\end{center}
 
 \end{posterbox}
 
 
 
+\begin{posterbox}[name=concept,column=1,span=2]{Content of the VI4IO Wiki}
 
-\begin{posterbox}[name=awareness,column=3,below=engineering]{Performance Awareness}
 
 \end{posterbox}
 
 
-\begin{posterbox}[name=hpccertification,column=3,below=awareness]{HPC Certification Program}
+\begin{posterbox}[name=schedule,column=1,span=2, below=concept]{High-Performance Storage List}
+Sortable, allows to add/remove columns (see the list next for the menu)
+
+Graphing and individual grouping 
+
+Metrics?
+\end{posterbox}
+
+\begin{posterbox}[name=HHCC,column=1,span=2, below=schedule, above=bottom]{IO-500 Effort}
+\end{posterbox}
+
+
+
+
+\begin{posterbox}[name=engineering,column=3]{HPSL 2017}
+The current list contains 30 supercomputers:
+\includegraphics[width=\textwidth]{hpsl-current}
+
+\includegraphics[width=\textwidth]{hpsl-figure}
+\end{posterbox}
+
+
+
+
+\begin{posterbox}[name=awareness,column=3,below=engineering]{Derived Analysis}
+With the collected data many in-depth analysis becomes possible, for example, 
+the relationship between storage and memory capacity:
+
+\vspace*{-1em}
+
+\includegraphics[width=5cm]{capacityvscompute}
+\includegraphics[width=2.15cm]{capacitymemory}
+
+\vspace*{-2em}
+\begin{itemize}\compresslist
+\item Correlation storage capacity vs.
+  \begin{itemize}\compresslist
+  \item memory capacity = 0.58      
+  \item compute peak = 0.04
+  \end{itemize}
+\item Mean(storage/mem capacity) = 54.6
+\end{itemize}
 
 \end{posterbox}
 
 
-\begin{posterbox}[name=tuning,column=3,below=hpccertification]{Tuning of Software}
-\end{posterbox}
+\begin{posterbox}[name=hpccertification,column=3,below=awareness, above=bottom]{VI4IO and You}
+Content is under open licenses. 
+You are welcome to join the mailing lists or participate!
 
-\begin{posterbox}[name=collaboration,column=3,above=bottom,below=tuning]{Collaboration}
+\huge \url{https://vi4io.org}
 \end{posterbox}
 
 
