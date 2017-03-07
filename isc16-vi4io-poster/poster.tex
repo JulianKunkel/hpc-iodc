@@ -105,7 +105,7 @@
   \hspace*{2em}
   \emph{$^2$ Sandia National Laboratory}
    \hspace*{2em}
-  \emph{$^3$ Seagate}
+  \emph{$^3$ Seagate Government Solutions}
   \\[0.5em]
    Contact: \url{kunkel@dkrz.de}
 }{
@@ -207,24 +207,172 @@ An example for DKRZ:
 \end{posterbox}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{posterbox}[name=concept,column=1,span=2]{Community Content of the VI4IO Wiki}
+\begin{minipage}{7cm}
+Worldwide research groups that address high-performance I/O including:
 
-\begin{posterbox}[name=concept,column=1,span=2]{Content of the VI4IO Wiki}
+\vspace*{-1em}
+\begin{itemize}\compresslist
+\item A taglist for available knowledge
+\item Research products such as file systems
+\item Ongoing research projects
+\end{itemize}
 
+\includegraphics[width=7.5cm]{groups}
 
+Everyone is welcome to add (own) group(s)!
+
+\end{minipage}
+\hfill
+\begin{minipage}{7.5cm}
+
+Relevant I/O related tools and benchmarks.
+
+\vspace*{1em}
+
+\includegraphics[width=7cm]{benchmark}
+\end{minipage}
 \end{posterbox}
 
 
 \begin{posterbox}[name=schedule,column=1,span=2, below=concept]{High-Performance Storage List}
-Sortable, allows to add/remove columns (see the list next for the menu)
+The High-Performance storage list contains the characteristics of site, supercomputer and connected storage (see the box about the system model).
+The list shown in the box on the right is sortable on the metric of choice.
+It allows to add/remove metrics (see the list next).
+Graphs are created based on selectable grouping.
 
-Graphing and individual grouping 
 
-Metrics?
+\textbf{Metrics:} Most metrics can be determined without measurement and describe hardware and software characteristics that should be well known to the site and vendor. A few metrics cover actually observed metadata and I/O performance, in this case the measurement procedure must be clear.
+The list stores data entered in the wiki into a database and converts data to a base unit.
+
+The following list of supported metrics includes a description:
+
+\begin{minipage}{0.48\textwidth}
+\textbf{Institution}
+\scriptsize
+\begin{itemize}\compresslist
+\item institution: The abbreviation of the institution. Note that systems are linked together based on year and institution.
+\item year: The year for which the data is valid.
+\item nationality: The international abbreviation for the nationality of the institution.
+\item web page: The web page of the institution.
+\item energy consumption: The overall energy consumption of the datacenter.
+\item power usage effectiveness: The PUE of the datacenter.
+\end{itemize}
+
+\normalsize
+\textbf{Supercomputer}
+\scriptsize\begin{itemize}\compresslist
+\item institution: see above
+\item year:  see above
+\item vendor: The vendor of the supercomputer.
+\item software: A list of keywords with relevant software components, e.g., which file system, parallelization software.
+\item installation: This is the date when the supercomputer has been installed. Multi-phase installations should appear with their last upgrade date.
+\item compute peak: The theoretical peak performance in FLOPs.
+\item node count: The number of nodes.
+\item total cores: The total number of available cores.
+\item memory capacity: The available memory capacity in Bytes.
+\item memory bandwidth: The sum of the theoretical memory bandwidth available in B/s.
+\item memory per node: The memory capacity per node.
+\item application domain: A list of the main (scientific) domains that use this supercomputer.
+\item applications: A list of the main applications (if known).
+\item energy consumption: The energy consumption of the supercomputer (without storage) in Watts – this does not take the PUE into account.
+\item interconnect: A list of keywords about the interconnect.
+\item processor: A list of keywords specifying the processor.
+\item graph500: The achieved performance according to the graph 500 list. This is not the position in the list, as this may change over time.
+\item graph500 problem scale: according to the graph 500 list.
+\item top500: The achieved performance according to the top 500.
+\item green500: The achieved efficiency according to the green 500.
+\item architecture: A list of keywords covering the system architecture, e.g., i386 64, GPGPU
+\end{itemize}
+\end{minipage}
+\quad
+\begin{minipage}{0.48\textwidth}
+
+
+\textbf{Storage}
+
+{
+\scriptsize
+\begin{itemize}\compresslist
+\item institution:  see left
+\item year:  see left
+\item type: The type of the storage, i.e., tape archive/shared storage
+\item installation: see left
+\item energy consumption: The energy consumption of the storage part in Watts – this does not take the PUE into account.
+\item capacity: The effective capacity that is available to users. It includes overhead of erasure (RAID) coding and potential hot/cold spares. This value can be easily derived from the number of available storage devices that support the listed file system.
+\item interconnect: A list of keywords about the interconnect.
+\item drives: The total number of tape drives for a nearline tape/MAID archive.
+\item cache size: The amount of storage cache in a nearline HSM.
+\item slots: The number of slots in a nearline tape/MAID archive to hold media.
+\item vendor: The vendor of the storage hardware.
+\item software: A list of keywords specifying the software further.
+\item hardware: A list of keywords specifying the hardware further.
+\item peak: The theoretical peak performance of the storage system. The value is the performance that could theoretically be achieved when transferring data between clients and storage. It is limited by 1) the aggregated network throughput between client and servers, 2) the aggregated (RAID) controller throughput, 3) the network topology.
+\item \textit{metadata rate}: Metadata throughput. The value can be determined using any I/O benchmark of choice that ensures that client-side and server-side caches are overwhelmed.
+\item \textit{sustained write}: Best I/O throughput ever measured when accessing files. The read and write values can be determined using any I/O benchmark of choice that ensures that client-side and server-side caches are overwhelmed.
+\item \textit{sustained read}: (see the description for write)
+\item servers: The number of storage servers of the storage system.
+\item hdds: The number of HDDs that belong to the storage system.
+\item ssds: The number of SSDs that belong to the storage system.
+\end{itemize}
+}
+\end{minipage}
+
+\textbf{Measurement procedure for sustained performance:}
+Compared to other lists (TOP500, Green500) that have a clear measurement process, the rules for determining sustained performance for the HPSL are relaxed due to the complexity of I/O benchmarks, However it must be clarified how the measurement has been conducted.
 \end{posterbox}
 
 \begin{posterbox}[name=HHCC,column=1,span=2, below=schedule, above=bottom]{IO-500 Effort}
+We started a discussion about creation of an I/O benchmark that allows comparison of facilities and storage systems. This challenge is approached on our mailing list: io-500.
+
+\textbf{Goals for the benchmark:}
+
+\vspace*{-1em}
+
+\begin{minipage}{10.5cm}
+\begin{itemize}
+\item Capture user-experienced performance % and honor system balance
+\item Reported performance is representative for:
+\begin{itemize}
+\item Applications with well optimized I/O patterns
+\item Applications that require a random-like workload
+\item Usage that depends on metadata and small files / objects
+\end{itemize}
+\end{itemize}
+\end{minipage}
+\qquad
+\begin{minipage}{4cm}
+\includegraphics[width=3.8cm]{border}
+\end{minipage}
+%\qquad
+%\begin{minipage}{6cm}
+%x
+%\end{minipage}
+
+\vspace*{-1em}
+
+Challenges:
+\begin{itemize}
+\item Inclusive: cover various storage technology and non-POSIX APIs
+\item Cheap: easy to run and short benchmarking time (in the order of minutes)
+\item Trustworthy: representative results and prevent cheating
+\end{itemize}
+
+
+Strategy:
+\begin{itemize}
+\item Build on existing benchmarks
+\item Plugin systems should allow for alternative storage technology
+\item Start by reporting one metric per benchmark, decide later about a single number
+\end{itemize}
+
+
 \end{posterbox}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
