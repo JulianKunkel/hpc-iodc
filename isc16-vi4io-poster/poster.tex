@@ -335,9 +335,9 @@ We started a discussion about creation of an I/O benchmark that allows compariso
 \item Capture user-experienced performance % and honor system balance
 \item Reported performance is representative for:
 \begin{itemize}
-\item Applications with well optimized I/O patterns
-\item Applications that require a random-like workload
-\item Usage that depends on metadata and small files / objects
+\item IOEasy: Applications with well optimized I/O patterns
+\item IOHard: Applications that require a random-like workload
+\item IOMD: Usage that depends on metadata and small files / objects
 \end{itemize}
 \end{itemize}
 \end{minipage}
@@ -354,9 +354,10 @@ We started a discussion about creation of an I/O benchmark that allows compariso
 
 Challenges:
 \begin{itemize}
+\item Representative: for optimized, naive I/O heavy workloads; and small objects
 \item Inclusive: cover various storage technology and non-POSIX APIs
-\item Cheap: easy to run and short benchmarking time (in the order of minutes)
 \item Trustworthy: representative results and prevent cheating
+\item Cheap: easy to run and short benchmarking time (in the order of minutes)
 \end{itemize}
 
 
