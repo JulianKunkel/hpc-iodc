@@ -24,7 +24,7 @@ workshop program committees.
 # Secondary leaders
 John Bent, john.bent@seagategov.com, Seagate Government Solutions, Prof. Title: TODO
 ## BIO
-As Chief Architect for Seagate Government Solutions, John Bent researches and designs storage systems necessary to support an exascale supercomputer. His prior work includes building several burst buffer prototypes while working for EMC and the PLFS virtual file system that achieved orders of magnitude bandwidth improvements for parallel writes to a single file while working for Los Alamos National Lab.
+As Chief Architect for Seagate Government Solutions, Dr. John Bent researches and designs storage systems necessary to support an exascale supercomputer. His prior work includes building several burst buffer prototypes while working for EMC and the PLFS virtual file system that achieved orders of magnitude bandwidth improvements for parallel writes to a single file while working for Los Alamos National Lab.
 
 # Topic Area
 Data, Storage,
