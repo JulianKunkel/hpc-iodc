@@ -111,8 +111,7 @@
 }{
     \begin{minipage}{0.2\textwidth}
      \begin{center}
-      \includegraphics[width=0.8\textwidth]{logo-vi4io.png}
-      \includegraphics[width=0.2\textwidth]{qr-code.jpg}
+      \includegraphics[width=0.8\textwidth]{logo-vi4io.png}      
      \end{center}
     \end{minipage}
 }
@@ -327,7 +326,7 @@ Compared to other lists (TOP500, Green500) that have a clear measurement process
 \end{posterbox}
 
 \begin{posterbox}[name=HHCC,column=1,span=2, below=schedule, above=bottom]{IO-500 Effort}
-We are discussing the creation of a benchmark to compare facilities and storage systems. This challenge is explored on our task page: https://www.vi4io.org/std/io500 and mailing list. 
+We are discussing the creation of a benchmark to compare facilities and storage systems. This challenge is explored on our task page: \url{https://www.vi4io.org/std/io500} and mailing list. 
 
 \textbf{Goals for the benchmark:}
 
@@ -384,7 +383,8 @@ Strategy:
 
 
 \begin{posterbox}[name=engineering,column=3]{HPSL 2017}
-The current list contains 30 sites:
+The current list contains 33 sites:
+
 \includegraphics[width=\textwidth]{hpsl-current}
 
 \includegraphics[width=\textwidth]{hpsl-figure}
@@ -399,25 +399,52 @@ the relationship between storage and memory capacity:
 
 \vspace*{-1em}
 
-\includegraphics[width=5cm]{capacityvscompute}
-\includegraphics[width=2.15cm]{capacitymemory}
+\includegraphics[width=5cm]{memstorage}
+\includegraphics[width=2cm]{capacitymemory}
 
 \vspace*{-2em}
 \begin{itemize}\compresslist
 \item Correlation storage capacity vs.
   \begin{itemize}\compresslist
-  \item memory capacity = 0.58      
-  \item compute peak = 0.04
+  \item memory capacity = 0.63
+  \item compute peak = 0.057
   \end{itemize}
-\item Mean(storage/mem capacity) = 54.6
+\item Mean(storage/mem capacity) = 58
 \end{itemize}
 
 \end{posterbox}
 
+\begin{posterbox}[name=b4,column=3,below=awareness]{Ongoing Work}
+\begin{itemize}\compresslist
+\item Support standardization efforts
+  \begin{itemize}\compresslist
+  \item IO-500 benchmark
+  \item Lossy compression interfaces  
+  \end{itemize}
+\item IO-500 agenda:
+  \begin{itemize}
+  \item June'17, proposal for benchmark
+  \item Benchmark runs on Top-500 sites
+  \item Nov'17, SC -- presentation of results
+  \end{itemize}
+\item Extending benchmarks, HPSL sites
+\item Support training and teaching for storage
+\end{itemize}
+\end{posterbox}
 
-\begin{posterbox}[name=hpccertification,column=3,below=awareness, above=bottom]{VI4IO and You}
+
+\begin{posterbox}[name=hpccertification,column=3,below=b4, above=bottom]{VI4IO and You}
+
+\begin{minipage}{0.7\textwidth}
 Content is under open licenses. 
 You are welcome to join the mailing lists or participate!
+\end{minipage}
+\begin{minipage}{0.29\textwidth}
+\includegraphics[width=\textwidth]{qr-code.jpg}
+\end{minipage}
+
+\vspace*{-0.5em}
+
 
 \huge \url{https://vi4io.org}
 \end{posterbox}
