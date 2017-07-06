@@ -32,13 +32,13 @@ Data Analytics, Visualization & Storage
 ## Provide a short description of your proposed BOF, clearly stating its goal(s), topic, format, and intended audience. If your BOF is accepted, this information will be used in the program. Indicate paragraph breaks by a blank line in the text field; all other text formatting will be lost.
 
 Due to the increasing complexity of HPC data management, activities in the storage research community have increased over the last few years.  
-The general purpose of this BoF is to foster this community and discuss
-the role of the international Virtual Institute for I/O (VI4IO, http://vi4io.org) in supporting, developing, and maintaining this community.  
+The general purpose of this BoF is to foster this community. 
 
 An important activity is the community driven development of an IO-500 benchmark.
-The speakers will introduce VI4IO briefly and focus on the status of the IO-500 development.
-A highlight is the presentation of the first IO-500 list at SC encompanied by a discussion how the list serves the community.
+The speakers will introduce the international Virtual Institute for I/O (VI4IO, http://vi4io.org) and focus on the status of the IO-500 development.
+A highlight is the presentation of the first IO-500 list at SC.
 The direction of VI4IO and the standardization of the IO-500 is then discussed with the participants.
+
 
 # Long Description (Maximum 500 words)
 ## Provide a description of your proposed BOF, clearly stating its goal(s), topic, relevance to the expected HPC audience, whether the BOF has been held before and past attendance count(s), and the outcome (e.g., written report describing results of survey of BOF attendees for a specific question - be sure to indicate which survey questions will be asked). Indicate paragraph breaks by a blank line in the text field; all other text formatting will be lost.  [Note: BOF Meetings - please enter "N/A"]
