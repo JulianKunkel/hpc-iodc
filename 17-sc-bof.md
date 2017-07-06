@@ -4,11 +4,10 @@ The Virtual Institute of I/O and the IO-500
 # Session Leader Information
 Dr. Julian Kunkel, kunkel@dkrz.de, DKRZ, +49 40 460094 161
 ## BIO
-Dr. Julian Kunkel is a postdoctoral researcher in the Scientific Computing group at the Universität Hamburg.
+Dr. Julian Kunkel is a postdoctoral researcher in the Scientific Computing group at the German Climate Computing Center and the Universität Hamburg.
 Julian gained interest in the topic of HPC storage during his studies of computer science in 2003.
 Since then, he researches methods to improve efficiency of storage systems in general.
 Besides his main goal to provide efficient and performance-portable I/O, his HPC-related interests are: data reduction techniques, performance analysis of parallel applications and parallel I/O, management of cluster systems, cost-efficiency considerations, and  software engineering of scientific software.
-In 2013, he defended his thesis about monitoring and simulation of parallel programs on application and system level.
 
 # Secondary leaders
 Dr. Jay Lofstead, gflofst@sandia.gov, Sandia National Lab, TODO: <Tel Nr>
