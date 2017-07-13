@@ -43,7 +43,7 @@ The direction of VI4IO and the standardization of the IO-500 is then discussed w
 # Long Description (Maximum 500 words)
 ## Provide a description of your proposed BOF, clearly stating its goal(s), topic, relevance to the expected HPC audience, whether the BOF has been held before and past attendance count(s), and the outcome (e.g., written report describing results of survey of BOF attendees for a specific question - be sure to indicate which survey questions will be asked). Indicate paragraph breaks by a blank line in the text field; all other text formatting will be lost.  [Note: BOF Meetings - please enter "N/A"]
 
-Goals of the BoF are to 1) advertise the community hub but also discuss and steer the direction of the community effort; 2) to reveal the current IO-500 list;
+Goals of the BoF are to 1) advertise the community hub but also discuss and steer the direction of the community effort; 2) to reveal the inagural IO-500 list;
 3) to discuss the benefit and direction of the efforts with the community.
 
 Goals of the Virtual Institute for I/O are:
