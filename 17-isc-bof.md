@@ -36,25 +36,38 @@ Storage
 File Systems
 Data Center
 
-# Abstract (Max 250 words)
+# Abstract (Max 100 words)
+Due to the increasing complexity of HPC data management, activities in the storage research community have increased over the last few years.  
+The general purpose of this BoF is to foster this community. 
 
-Due to the increasing complexity of HPC data management, activities in the storage research community 
-have increased over the last few years.  The general purpose of this BoF is to foster this community and discuss 
-the role of the international Virtual Institute for I/O (VI4IO, http://vi4io.org) in supporting, developing, and maintaining this community.
+An important activity is the community driven development of an IO-500 benchmark.
+The speakers will introduce the international Virtual Institute for I/O (VI4IO, http://vi4io.org) and focus on the status of the IO-500 development.
+A highlight is the presentation of the inaugural IO-500 list at SC.
+The direction of VI4IO and the standardization of the IO-500 is then discussed with the participants.
+
+# Long description
+
+Goals of the BoF are to 1) advertise the community hub but also discuss and steer the direction of the community effort; 2) to reveal the inagural IO-500 list;
+3) to discuss the benefit and direction of the efforts with the community.
 
 Goals of the Virtual Institute for I/O are:
 * Provide a platform for I/O researchers and enthusiasts for exchanging information
 * Foster international collaboration in the field of high-performance I/O
 * Track, and encourage, the deployment of large storage systems by hosting information about high-performance storage systems
 
-The speakers will give talks covering VI4IO and issues of benchmarking storage systems.
-The direction of these efforts is then discussed with the participants.
-A specific purpose of the BoF is to elaborate whether the community would be well-served by an IO-500 benchmark similar to the Top-500. 
+VI4IO provides a resource for storage researchers to both document their systems and discuss best practices.
+The IO-500 list offers a way to document relative performance for comparative purposes with a ranking to encourage competitive development and IO optimization for vendors and provides a management justification.
+The IO-500 benchmark consists of data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications.
+Together with comprehensive data from sites, supercomputers and storage, in-depth analysis of system characteristics are tracked by the list and can be analyzed in detail.
+Tuning of storage is explicitly encouraged by the design of the IO-500 but tuning details are part of the submission process and must be revealed.
+Thus, they help defining best practices.
+We have run the benchmark on several sites and reveal the first list during supercomputing.
 
-Goals of the BoF are to 1) advertise the community hub but also discuss and steer the direction of the community effort, 2) to specifically identify possibilities to create a relevant community I/O benchmark that can be tracked with an IO-500 list.
 
-The outcome of this BoF will steer the direction of the community effort, a short report about the discussions for VI4IO and the IO-500 will be written and published on our community page.
 
+Expected HPC audience are 1) I/O experts from data centers and industry, 2) researchers/engineers working on high-performance I/O for data centers, 3) domain scientists and computer scientists interested in discussing I/O issues.
+
+The outcome of this BoF will steer the direction of the community effort.
 
 # Targeted Audience
 
