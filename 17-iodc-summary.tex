@@ -1,0 +1,187 @@
+\documentclass{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref} % Version 0.18.10
+
+
+\begin{document}
+\mainmatter
+
+
+\author{Julian M. Kunkel, Jay Lofstead, Colin McMurtrie
+}
+
+\title{HPC I/O in the Data Center Workshop (HPC-IODC)}
+
+\institute{
+	Deutsches Klimarechenzentrum\\ 	Bundesstraße 45a\\	20146 Hamburg, Germany\\ \email{kunkel@dkrz.de}
+	\and
+	Center for Computing Research\\ Sandia National Laboratories\\ Albuquerque, USA
+	\and
+	Swiss National Computing Center (CSCS) \\ Lugano, Switzerland
+}
+
+\maketitle{}
+
+% -----------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Many public and privately funded data centers host supercomputers for running large scale simulations and analyzing experimental and observational data.
+These supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
+In contrast, commercial data centers, such as Facebook and Google, execute loosely coupled workloads with a broad assumption of regular failures.
+The dimension of the data centers is enormous.
+A 2013 article summarizes commercial data centers' dimensions\,\cite{data13}.
+It estimates, for example, that Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
+With the hunger for information, the globally installed storage capacity increases exponentially and is expected to hit 7,235 Exabytes by 2017\,\cite{EXA13}.
+This trend is visible in the sales reports of companies such as the disk drive manufacturer Seagate. Within 5 years, they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.
+With state-of-the-art 8\,TB disks, this would already account for 5.5 exabyte of capacity by day.
+
+Management of the huge amount of data is vital for effective use of the contained information. However, with limited budgets, it is a daunting task for data center operators,
+especially as design and storage system required hardware depends heavily on the executed workloads.
+A co-factor of the increasing difficulty is the increase in complexity of the storage hierarchy with the adoption of SSD and memory class storage technology.
+The US Department of Energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+
+There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
+Examples are the Storage Networking Industry Association (SNIA) for enterprises, the
+Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the
+Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop (PDSW) and the HEC FSIO workshop \cite{bancroft2009}.
+
+There are many I/O workloads studies and performance analysis reports for parallel I/O available.
+Additionally, many surveys of enterprise technology usage include predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
+However, analysis conducted for HPC typically focuses on applications and not on the data center perspective.
+Information about data center operational aspects is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
+
+In this workshop, we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues.
+
+
+\section{Organization of the Workshop}
+
+\noindent The workshop content was built on three tracks:
+\begin{itemize}
+  \item \textbf{Research paper presentations} -- authors needed to submit a paper regarding relevant research for I/O in the datacenter.
+  \item \textbf{Talks from I/O experts} -- authors needed to submit a rough outline for the talk related to the operational aspects of the data center.
+  \item \textbf{Invited track} for a keynote and two moderated discussion slots.
+\end{itemize}
+
+\noindent The CFP has been issued beginning of January.
+Important deadlines were:
+\begin{itemize}
+  \item Submission deadline: 2017-04-12 AoE
+  \item Author notification: 2017-04-25
+  \item Workshop: 2017-06-22
+  \item Camera-ready papers: 2017-07-22
+\end{itemize}
+
+From all submissions, the programm committee selected four talks from I/O experts and four research papers for presentation during the workshop.
+
+\subsection{Programm Committee}
+\begin{itemize}
+  \item Wolfgang Frings (\textit{Jülich Supercomputing Center, Germany})
+  \item Javier Garcia Blas (\textit{University Carlos III of Madrid, Spain})
+  \item  Rob Ross (\textit{Argonne National Laboratory, USA})
+  \item   Carlos Maltzahn (\textit{University of California, Santa Cruz, USA})
+  \item  Thomas Boenisch (\textit{HLRS, Stuttgart, Germany})
+  \item  Sai Narasimhamurthy (\textit{Seagate, United Kingdom})
+  \item Jean-Thomas Acquaviva (\textit{DDN, France})
+  \item  Julian Kunkel (\textit{DKRZ, Germany})
+  \item  Jay Lofstead (\textit{Sandia National Laboratory, USA})
+  \item  Colin McMurtrie (\textit{CSCS, Switzerland})
+\end{itemize}
+
+
+
+\section{Workshop Summary}
+\label{sec:summary}
+
+Throughout the day, on average 65 participants attended the workshop.
+We had a good mix of talks from I/O experts, data center relevant research followed by a short discussion.
+A short summary of the presentations is given in the following.
+The slides of the presentations are available on the workshop's webpage: \\
+\url{http://wr.informatik.uni-hamburg.de/events/2017/iodc}.
+
+
+
+\subsection{Research Papers}
+
+The research session covered 5 accepted papers from 6 submissions:
+\begin{itemize}
+\item In the first talk, Walker Haddock presented results of the efficiency for GPU offloaded erasure coding for Ceph.
+With a GPU plugin to support coding, a 1 GB/s full duplex performance is achievable for 100 shards.
+\item Eugen Betke introduced an online monitoring system for parallel I/O performance based on SIOX.
+The novelty of the approach is non-intrusive monitoring via an instrumented FUSE mountpoint allowing to cover \texttt{mmap()} operations.
+\item Jakob Lüttgau presented a simulator for hierarchical storage systems focusing on tape systems.
+Queuing systems are used to model I/O on the different storage tiers;
+the simulation allows to measure derived metrics in a fine-grained fashion for instance to analyzing waiting times (quality of service) and drive utilization.
+\item Jay Lofstead showed results for a large scale performance study for the IOR benchmark to identify performance variability and stragglers across the different OSTs.
+This demonstrated that for each measurement a small proportion of storage targets ($<$ 20\%) are slower than the others but the performance of storage targets chances over time changing the assignment slow/fast targets.
+\item The last talk of the research papers by Pilar Gomez-Sanchez introduced a framework to recover the access pattern of MPI parallel applications on a high-level.
+The methodology characterizes I/O behavior for individual application phases and introduces several derived metrics.
+A process starts another phase when it invokes an instrumented MPI function.
+\end{itemize}
+
+\subsection{Talks from Experts}
+
+The seven talks from experts included information about the site and typical
+application profiles but also contained information regarding I/O tools and strategies applied to mitigate pressing issues.
+
+\begin{itemize}
+\item
+In the first talk, Bryan Lawrence introduced the computation infrastructure in the UK with a focus on Earth-Science.
+He described the JASMIN infrastructure in detail which is managed and designed by STFC.
+A main distinction is that the infrastructure is continuously upgraded and the system architecture is developed by themself and not any vendor.
+
+\item Tiago Quintino shed light on the I/O challenges of ECMF.
+The center observes the need to adapt workflows to deal with paradigm shifts in technology.
+For example, to move from compute centric to a data centric paradigm minimizing data movement and shipping compute to data.
+
+\item Roland Laifer introduces the HPC systems at KIT.
+Highlights of his talk are results on using Lustre on a wide area Infiniband connection, their analysis approach by
+capturing I/O statistics, and the approach for disaster recovery.
+
+\item Yuichi Tsujita presented the K Computer and storage systems.
+He focused on obstacles due to large scale parallelism: the metadata server load, client eviction (loss of server connections), and cross node interference.
+Several strategies to mitigate these issues are presented.
+
+\item Sandra Mendez introduces the LRZ HPC systems and then focuses on monitoring of I/O patterns.
+The usage of deployed analysis tools PerSyst and Darshan are illustrated on several applications.
+
+\item Clemens Grelck introduced the cHiPSet project which is an community effort that fosters collaboration in the area of HPC and Big Data.
+The activity is still open and new researcher may join the project:
+\url{http://www.chipset-cost.eu}
+
+\item Rosemary Francis presented the tool Mistral that profiles I/O of large scale applications to identify bad I/O patterns, foster optimizing and load balancing.
+The monitoring tool allows to detect rogue applications based on policies such as limiting storage capacity or metadata.
+A case study shows the effectiveness to tame non well-formed I/O.
+
+
+\end{itemize}
+
+From the individual talks, it can be concluded that analyzing and understanding I/O behavior is the top priority for researchers and data centers.
+
+
+\subsection{Discussion round}
+
+The major distinguishing feature for this workshop compared to other venues is the discussion rounds.
+The opportunity for themed, open discussions about issues both pressing and relevant to the data center
+community facilitates sharing experiences, solutions, and problems.
+
+This year we focused on the community development of an IO-500 benchmark, see \url{http://io500.org}.
+The IO-500 benchmark consists of data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications.
+Each benchmark is run in an easy and hard mode to identify best-case performance for optimized applications and typical performance for applications with a suboptimal access pattern.
+
+The Virtual Institute for I/O (VI4IO)~\footnote{\url{http://vi4io.org}} supports this activity and tracks comprehensive data from sites, supercomputers and storage on the high-performance storage list.
+This data allows for an in-depth analysis of system characteristics and fosters the understanding of I/O systems.
+
+\bibliographystyle{splncs}
+\bibliography{literature}
+
+
+\end{document}
