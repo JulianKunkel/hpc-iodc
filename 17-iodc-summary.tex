@@ -52,7 +52,8 @@ The US Department of Energy recognizes the importance of data management, listin
 There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
 Examples are the Storage Networking Industry Association (SNIA) for enterprises, the
 Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the
-Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop (PDSW) and the HEC FSIO workshop \cite{bancroft2009}.
+Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop/Data Intensive Scalable Computing Systems
+(PDSW-DISCS) and the HEC FSIO workshop \cite{bancroft2009}.
 
 There are many I/O workloads studies and performance analysis reports for parallel I/O available.
 Additionally, many surveys of enterprise technology usage include predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
@@ -64,11 +65,11 @@ In this workshop, we bring together I/O experts from data centers and applicatio
 
 \section{Organization of the Workshop}
 
-\noindent The workshop content was built on three tracks:
+\noindent The workshop content consisted of three topics:
 \begin{itemize}
   \item \textbf{Research paper presentations} -- authors needed to submit a paper regarding relevant research for I/O in the datacenter.
   \item \textbf{Talks from I/O experts} -- authors needed to submit a rough outline for the talk related to the operational aspects of the data center.
-  \item \textbf{Invited track} for a keynote and two moderated discussion slots.
+  \item A moderated \textbf{discussion} to identify key issues and potential solutions in the community.
 \end{itemize}
 
 \noindent The CFP has been issued beginning of January.
@@ -121,7 +122,7 @@ The novelty of the approach is non-intrusive monitoring via an instrumented FUSE
 Queuing systems are used to model I/O on the different storage tiers;
 the simulation allows to measure derived metrics in a fine-grained fashion for instance to analyzing waiting times (quality of service) and drive utilization.
 \item Jay Lofstead showed results for a large scale performance study for the IOR benchmark to identify performance variability and stragglers across the different OSTs.
-This demonstrated that for each measurement a small proportion of storage targets ($<$ 20\%) are slower than the others but the performance of storage targets chances over time changing the assignment slow/fast targets.
+This demonstrated that for each measurement a small proportion of storage targets ($<$ 20\%) are slower than the others but the performance of storage targets changes over time changing the assignment slow/fast targets.
 \item The last talk of the research papers by Pilar Gomez-Sanchez introduced a framework to recover the access pattern of MPI parallel applications on a high-level.
 The methodology characterizes I/O behavior for individual application phases and introduces several derived metrics.
 A process starts another phase when it invokes an instrumented MPI function.
@@ -164,7 +165,7 @@ A case study shows the effectiveness to tame non well-formed I/O.
 
 \end{itemize}
 
-From the individual talks, it can be concluded that analyzing and understanding I/O behavior is the top priority for researchers and data centers.
+From the individual talks, it can be concluded that analyzing and understanding I/O behavior and achieving consistent performance is still the top priority for researchers and data centers.
 
 
 \subsection{Discussion round}
@@ -175,9 +176,10 @@ community facilitates sharing experiences, solutions, and problems.
 
 This year we focused on the community development of an IO-500 benchmark, see \url{http://io500.org}.
 The IO-500 benchmark consists of data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications.
-Each benchmark is run in an easy and hard mode to identify best-case performance for optimized applications and typical performance for applications with a suboptimal access pattern.
+Each benchmark is run in an easy and hard mode to identify best-case performance for optimized applications and typical performance for applications with a suboptimal access pattern. Unlike other competitive benchmarks, ``gaming'' the system to
+get optimal results is encouraged because all configurations on how the performance results were achieved must be shared as part of any submission to the list. This transparency achieves three goals: 1) best practices for each different kind of storage on a platform are documented for users, 2) configurations and platform validation approaches can be better understood, and 3) a detailed catalog of storage options on various platforms over time with configurations for achieving specific performance is collected. The last of these will offer a long-term archive to understand the evolution of platform storage.
 
-The Virtual Institute for I/O (VI4IO)~\footnote{\url{http://vi4io.org}} supports this activity and tracks comprehensive data from sites, supercomputers and storage on the high-performance storage list.
+The Virtual Institute for I/O (VI4IO)\footnote{\url{http://vi4io.org}} supports this activity and tracks comprehensive data from sites, supercomputers and storage on the high-performance storage list.
 This data allows for an in-depth analysis of system characteristics and fosters the understanding of I/O systems.
 
 \bibliographystyle{splncs}
