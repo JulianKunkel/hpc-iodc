@@ -3,7 +3,7 @@
 \usepackage{hyperref}
 
 \title{HPC I/O in the Data Center\\ {\normalsize 4th HPC-IODC Workshop}}
-\author{Julian Kunkel \and Jay Lofstead \and Colin McMurtrie}
+\author{Julian Kunkel \and Jay Lofstead}
 
 \makeatletter
 \renewcommand{\@seccntformat}[1]{}
@@ -28,6 +28,7 @@ Dr. Julian Kunkel is post-doc in the group Scientific Computing at the DKRZ.
 Since 2006, Julian has been working on tracing environments and tools for client and server-side I/O.
 Julian is responsible for the University of Hamburg's contributions to several funded projects.
 Besides his main goal to provide efficient and performance-portable I/O, his HPC-related interests are: data reduction techniques, performance analysis of parallel applications and parallel I/O, management of cluster systems, cost-efficiency considerations, and software engineering of scientific software.
+He will move as Lecturer (Junior professor equivalent) to Reading University in April 2018 and continue the I/O research in the domain of weather/climate.
 
 
 \subsection{Dr. Jay Lofstead}
@@ -42,13 +43,6 @@ Award winning ADIOS I/O componentization framework in use in more than 30
 production scientific simulations. He is a member of several conference and
 workshop program committees.
 
-\subsection{Colin McMurtrie}
-% Contact data as needed by the form
-% Colin McMurtrie (CSCS, Switzerland), cmurtrie@cscs.ch
-
-Colin McMurtrie is an Associate Director at CSCS, in Switzerland, where he is in charge of the Systems Integration group.  At CSCS since 2009, he managed the National Systems group for 4 years before moving into his current role.  Colin has experience with the management of large HPC systems in a production environment and has organised some targeted workshops relating to storage on HPC systems.
-
-
 \section{Abstract}
 Managing scientific data at large scale is challenging for scientists but also for the host data center.
 The storage and file systems deployed within a data center are expected to meet users' requirements for data integrity and high performance across heterogeneous and concurrently running applications.
@@ -58,14 +52,15 @@ To effectively manage the data load within a data center, I/O experts must under
 
 In this workshop we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues.
 To focus on relevant aspects and streamline the discussion, a list of relevant topics is provided as common structure of the talks.
-Scientific papers related to the topic are welcome for submission.
+We welcome submission of scientific papers with state-of-the-practice and specifically focused on I/O in the datacenter.
 For further information regarding participation, the topics and the mailing list, see the web page.
 
 \section{Keywords}
 Data center, File systems, Storage, Performance, Architecture
 
 \section{Workshop length}
-Full day % I hope for! We could also go to half-day the first time to see..
+Full day.
+We aim to share the morning session with the I/O related WOPSSS workshop (see workshop format).
 
 \section{Workshop webpage}
 \url{http://wr.informatik.uni-hamburg.de/events/2018/iodc}
@@ -90,21 +85,16 @@ Between 50 and 80.
 We will contribute to the joint Springer LNCS post-conference proceedings.
 
 
-
-
 \section{Workshop format}
-The workshop content is structured in three parts,
-firstly, a keynote, secondly, short research paper presentations and, lastly, talks from I/O experts.
+The workshop content is structured in three parts, firstly, in the morning we organize a shared session with the I/O related WOPSSS workshop, which covers a keynote, best papers and community activities.
+The afternoon session puts an emphasis on issues in the data center and covers paper presentations, discussion slots, and talks from I/O experts.
+
 Researchers and I/O experts can submit their proposals for a paper or talk according to a call for participation for papers and speakers.
-
-To increase the participation, firstly, we will actively invite representatives of different data centers and representatives of active workflow users/developers to give a talk and/or submit short papers regarding recent issues.
-Secondly, we will announce the workshop on typical mailing lists and send the call for participation.
-
 We will provide a common list of topics to be addressed in each I/O expert's talk, such that the individual presentations are aligned.
 
 
 \section{Previous Instances}
-We held this workshop at ISC 2015 with approximately 30 attendees, 10 invited presentations, and two discussion sessions.
+We held this workshop the first time at ISC 2015 with approximately 30 attendees, 10 invited presentations, and two discussion sessions.
 In 2016, the workshop format was changed, in addition to the expert talks, we added a research section allowing submission of short scientific papers and a keynote talk.
 The attendance to the workshop was similar to 2015, but finally we accepted four research papers.
 In 2017, more than 50 people attended the workshop; we accepted 5 of 6 papers.
@@ -122,7 +112,7 @@ We accept short papers with up to 12 pages (excl. references) in LNCS format.
 Our targeted proceedings are ISC's post-conference workshop proceedings in Springers LNCS.
 We will use Easy-chair for managing the proceedings and PC interaction.
 
-Expected number of papers: We expect 10 submissions.
+Expected number of papers: We expect 14 submissions\footnote{We have invited the significantly grown PC to submit papers and have external agreements.}.
 With an acceptance rate of 50\%, we aim to fill at least half of the presentation slots with papers.
 
 \paragraph{Schedule:}
@@ -135,8 +125,36 @@ With an acceptance rate of 50\%, we aim to fill at least half of the presentatio
 Note that our call for speakers follows a similar schedule, but they'll have to submit only a talk abstract and a brief bio.
 
 Program committee:
-We already grew the PC from last year, see \url{https://wr.informatik.uni-hamburg.de/events/2018/iodc}.
-Guiding principles for inviting PC members are the geographically distribution of them and at most one PC per institution/organization.
+We grew the PC from last year significantly:
+\begin{itemize}
+  \item George Markomanolis (King Abdullah University of Science and Technology)
+  \item Tiago Quintino (ECMWF)
+  \item Bing Xie (Oak Ridge National Lab)
+  \item Wolfgang Frings (Jülich Supercomputing Center)
+  \item Ann Gentile (Sandia National Laboratories)
+  \item Michael Kluge (TU Dresden)
+  \item Feiyi Wang (Oak Ridge National Lab)
+  \item Javier Garcia Blas (University Carlos III of Madrid)
+  \item Thomas Boenisch (HLRS)
+  \item Rob Ross (Argonne National Laboratory)
+  \item Brad Settleyer (Los Alamos National Laboratory)
+  \item Suren Byna (Lawrence Berkeley National Laboratory)
+  \item Adrian Jackson (The University of Edinburgh)
+  \item Sandro Fiore (CMCC)
+  \item Jim Brandt (Sandia National Laboratories)
+  \item Jean-Thomas Acquaviva (DDN)
+\end{itemize}
+
+To increase the participation further, we firstly will actively invite representatives of different data centers and representatives of active workflow users/developers to give a talk and/or submit short papers regarding recent issues.
+Secondly, we will announce the workshop on typical mailing lists and send the call for participation.
+
+
+For further information, see: \url{https://wr.informatik.uni-hamburg.de/events/2018/iodc}.
+%Guiding principles for inviting PC members are the geographically distribution of them and at most one PC per institution/organization.
+
+
+
+
 
 
 \end{document}
