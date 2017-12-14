@@ -1,0 +1,110 @@
+\documentclass{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref} % Version 0.18.10
+
+
+\begin{document}
+\mainmatter
+
+
+\author{Julian M. Kunkel$^1$, Jay Lofstead$^2$, John Bent$^3$}
+
+\title{BoF: The Virtual Institute for I/O and the IO-500}
+
+\institute{
+	Deutsches Klimarechenzentrum, \email{kunkel@dkrz.de}
+	\and
+	Center for Computing Research, Sandia National Laboratories
+	\and
+	Cray
+}
+
+\maketitle{}
+
+\section{Abstract}
+
+Goals of the BoF are to 1) advertise the community hub but also discuss and steer the direction of the community effort; 2) to reveal the inaugural IO-500 list; 3) to discuss the benefit and direction of the efforts with the community.
+
+The Virtual Institute for I/O (VI4IO) provides a resource for storage researchers to both document their systems and discuss best practices. The IO-500 list offers a way to document relative performance for comparative purposes with a ranking to encourage competitive development and IO optimization for vendors and provides a management justification. The IO-500 benchmark consists of data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications. Together with comprehensive data from sites, supercomputers and storage, in-depth analysis of system characteristics are tracked by the list and can be analyzed in detail. Tuning of storage is explicitly encouraged by the design of the IO-500 but tuning details are part of the submission process and must be revealed. Thus, they help defining best practices.
+The community has run the benchmark on several sites and reveal the first list during supercomputing.
+All presentations are available online at \url{https://vi4io.org}.
+
+\section{Organization}
+
+The workshop was structured into three talks followed by a discussion framed by the talks.
+A summary of the talks and discussion is provided in the following.
+During the BoF, we counted roughly 45 attendees with many storage experts.
+
+
+\section{Talks}
+
+\pargraph{}
+First, Jay Lofstead introduced the session briefly and shed light on the background and
+history of the workshop organization and the relation between VI4IO and the IO-500.
+Together both efforts serve the purpose:
+1. Provide a competitive list for storage performance.
+2. Gather best practices for different storage system designs.
+3. Document various storage systems.
+4. Friendly cooperation and competition.
+
+
+
+\paragraph{}
+In the talk “\textbf{IO-500}”, John Bent introduced the idea behind the benchmarking effort and the individual benchmarks introduced.
+Benchmarks are IOR, mdtest, and a find as well as  rules, parameters, and the ranking systems.
+The overall score is determined using the geometric mean of performance of all metadata and data runs.
+Additional some encountered issues were described and how the script based solution can be parameterized.
+Next, several results of the inaugural list are presented, which contains 9 systems.
+The list can be sorted on many parameters and can even compute new scores based on arbitrary equations.
+The first overall score winner is Oakforest-PACS from JCAHPC.
+
+
+\paragraph{}
+In the talk “\textbf{The Virtual Institute for I/O and the HPSL}“, Julian Kunkel introduced the virtual institute and its community hub by giving a demo of its outreach on the web page. VI4IO hosts information about research groups, I/O tools and the High-Performance Storage List (HPSL). Technically, the open institute is organized in a Wiki and supported by mailing lists.
+Goals of the Virtual Institute for I/O are to
+\begin{itemize}
+	\item Provide a platform for I/O enthusiasts for exchanging information
+	\item Foster international collaboration in the field of high-performance I/O
+	\item Track, and encourage, the deployment of large storage systems by hosting information about high-performance storage systems
+\end{itemize}
+
+After the general mission, the talk discussed changes.
+A major change affected the High-Performance Storage List (HPSL) that is now more generalized into the Comprehensive Data Center List (CDCL).
+The HPSL hosts characteristics of data centers (sites), the deployed supercomputers and storage/file systems including near-line storage. It allows to describe the characterizations of each system individually since most sites share storage resources across multiple compute infrastructures. The list offers means to summarize and visualize data according to several easy to determine characteristics such as netto storage capacity and peak performance, and may list individual systems or aggregate data center resources.
+A preliminary analysis of storage capacity vs. memory capacity of the systems on the 39 sites of the list gives some incentive about the kind of meta-analysis that is enabled with such a list.
+The generalization of HPSL to CDCL enriches the previous coarse grained component based model with a fine grained component model and a flexible schema covering aspects such as energy, network topology and costs.
+Finally, a roadmap for VI4IO in 2018 is described.
+
+Naturally, the CDCL benefits from including observable throughput inspired by application needs, this lead to the talk of the IO-500.
+
+
+
+\paragraph{}
+In the talk “\textbf{Experience using the IO-500}”, George Markomanolis described the experience when running the IO-500 on the KAUST system using the Cray BurstBuffers.
+He reported several issues when running and setting up the system.
+Then results and a more detailed performance analysis was conducted.
+Finally, he showed a video how easy it is to setup and conduct an initial run on system.
+
+
+\section{Discussion}
+
+
+In the discussion, several attendees claimed that the current benchmarks miss  characterizations of the storage that are important particularly more application-centric metrics.
+Therefore, the IO-500 enables extensions of the current benchmark suite with additional and optional benchmarks.
+Besides application metrics, latency based benchmarks have been asked for from a system vendor.
+For latency, currently a benchmark is prepared by the partners.
+
+Additionally, several concerns regarding the definition of a new benchmark, its goal and target audience have been raised and controversially discussed even within the audience.
+
+Heavy interest in the topic demonstrates community interest and motivates us to submit the BoF with the current status of the community next year again.
+
+
+\end{document}
