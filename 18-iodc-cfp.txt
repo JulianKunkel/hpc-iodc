@@ -1,0 +1,103 @@
+The 4th HPC I/O in the Data Center Workshop (HPC-IODC 2018)
+in conjunction with ISC High Performance on Thursday June 28th, 2018, in
+Frankfurt, Germany.
+Url: http://wr.informatik.uni-hamburg.de/events/2018/iodc
+
+** Workshop overview **
+
+Managing scientific data at large scale is challenging for scientists
+but also for the host data center. The storage and file systems
+deployed within a data center are expected to meet users' requirements
+for data integrity and high performance across heterogeneous and
+concurrently running applications.
+
+With new storage technologies and layers in the memory hierarchy, the
+picture is becoming murkier. To effectively manage the data load
+within a data center, I/O experts must understand how users expect to
+use these new storage technologies and what services they should
+provide in order to enhance user productivity. We seek to ensure a
+systems-level perspective is included in these discussions.
+
+In this workshop we bring together I/O experts from data centers and
+application workflows to share current practices for scientific
+workflows, issues and obstacles for both hardware and the software
+stack, and R&D to overcome these issues.
+
+The workshop content is build on two tracks:
+1) research paper track – requesting submissions regarding
+state-of-the-practice and research about I/O in the datacenter.
+2) talks from I/O experts – you'll need to submit a rough outline for your talk.
+
+We will stream the workshop live using YouTube and respond to questions asked in comments.
+If you are interested to join please send an email to kunkel@dkrz.de
+
+Contributions to both tracks are peer reviewed and require submission
+of the respective research paper or idea for your presentation via
+Easychair: https://easychair.org/conferences/?conf=hpciodc2018
+
+The HPC-IODC workshop is embedded into a full-day program
+for I/O that we organize with the team of the Workshop on Performance and
+Scalability of Storage Sytems (WOPSSS) URL: http://wopsss.org/
+We will build a program with a joint morning session with keynote talks and best papers and
+then diverge into two independent workshops in the afternoon.
+
+** Track: research papers **
+
+The proceedings of the research papers will be published by Springer in the
+Lecture Notes of Computer Science (LNCS) series.
+The research track accepts papers covering state-of-the-practice and research dedicated to storage in the datacenter.
+We accept short papers with up to 12 pages (excl. references) in LNCS format.
+
+We will accept more papers in the scope of our topics than can be presented
+at full length during the workshop. Therewith, we give authors a chance to
+submit relevant papers but not insist on their participation.
+Additionally, we can focus on the discussion of controversial topics
+during the workshop.
+
+Paper Deadlines
+- Submission deadline: 2018-04-12 AoE
+- Author notification: 2018-04-25
+- Pre-final submission: 2018-06-10 (to be shared during the workshop)
+- Workshop: 2018-06-28
+- Camera-ready papers: 2018-07-28 (preliminary date)
+
+** Track: Talks by I/O experts **
+
+The topics of interest in this track include but are not limited to:
+- A description of the operational aspects of your data center
+- A particular solution for certain data center workloads in production
+We also accept industry talks, given that they focus on operational issues on data centers and omit marketing.
+
+If you are interested to participate, please submit a short (1/2 page)
+abstract of your talk together with a (very) short Bio.
+
+Abstract Deadlines:
+
+- Submission deadline: 2018-04-13 AoE
+- Author notification: 2018-04-25
+
+
+** Program committee **
+
+  * Adrian Jackson (The University of Edinburgh)
+  * Ann Gentile (Sandia National Laboratories)
+  * Bing Xie (Oak Ridge National Lab)
+  * Brad Settleyer (Los Alamos National Laboratory)
+  * Feiyi Wang (Oak Ridge National Lab)
+  * George Markomanolis (King Abdullah University of Science and Technology)
+  * Javier Garcia Blas (University Carlos III of Madrid)
+  * Jay Lofstead (Sandia National Lab)
+  * Jean-Thomas Acquaviva (DDN)
+  * Jim Brandt (Sandia National Laboratories)
+  * Julian Kunkel (DKRZ)
+  * Michael Kluge (TU Dresden)
+  * Rob Ross (Argonne National Laboratory)
+  * Sandro Fiore (CMCC)
+  * Suren Byna (Lawrence Berkeley National Laboratory)
+  * Sven Breuner (ThinkparQ)
+  * Thomas Boenisch (HLRS)
+  * Tiago Quintino (ECMWF)
+  * Wolfgang Frings (Jülich Supercomputing Center)
+
+Kind regards,
+Julian Kunkel & Jay Lofstead
