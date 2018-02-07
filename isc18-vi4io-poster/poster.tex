@@ -84,7 +84,12 @@
   boxColorOne=white,
   boxColorTwo=UHAM
 }{ % Eye Catcher
-  %
+  \begin{minipage}{0.2\textwidth}
+   \begin{center}
+    \includegraphics[width=0.8\textwidth]{logo-io500.pdf}
+   \end{center}
+  \end{minipage}
+
 }{ % Poster Title
   \textbf{The Virtual Institute for I/O and the IO-500}
   %\medskip
@@ -116,7 +121,7 @@
 The research community in high-performance computing is organized loosely.
 There are many distinct resources such as homepages of research groups and benchmarks.
 The Virtual Institute for I/O aims to provide a hub for the community and particularly newcomers to find relevant information in many directions.
-Additionally, we host the \textbf{high-performance storage list}. Similarly to the top500, it contains information about supercomputers and their storage systems.
+Additionally, we host the \textbf{comprehensive data center list (CDCL)}. Similarly to the top500, it contains information about supercomputers and their storage systems.
 Additionally, in the community, we are working on standardizing an I/O benchmark.
 
 This poster introduces the Virtual Institute for I/O, the high-performance storage list and the effort for the IO-500 which are unfunded community projects.
@@ -166,39 +171,34 @@ The organization uses a wiki as central hub
 \end{posterbox}
 
 
-\begin{posterbox}[name=wps,column=0,above=bottom,below=overview]{HPSL System Model}
-The system model describes how characteristics are assigned to components.
+\begin{posterbox}[name=wps,column=0,below=overview]{CDCL System Model}
+The comprehensive data center list with its system model describes how characteristics are assigned to components.
 Storage is difficulty to assign to a single component as it is often shared across supercomputers,
-therefore, a component based model is used.
+therefore, a flexible component based model is used.
 
 Supported components:
 \vspace*{-1em}
 \begin{itemize}\compresslist
 \item Site: Describes the facility
 \item Supercomputer: A system
-\item Storage (shared, local or nearline storage)
+\item Storage system
+\item Nodes
+\item Network
+\item Building
 \end{itemize}
 
 \vspace*{-1em}
 
-Conceptual example:
+The schema is under active development -- we aim to describe data center characteristics.
+The web page allows the creation of a topology for the facility to indicate the relation between the components -- ultimately multiple views will be created.
+\end{posterbox}
 
-\vspace*{-1em}
-\begin{center}
-\includegraphics[width=0.9\textwidth]{model}
-\end{center}
+\begin{posterbox}[name=io500res,column=0,above=bottom,below=wps]{IO-500 List Nov 2017}
+  \includegraphics[width=\textwidth]{logo-io500.pdf}
 
-\vspace*{-5em}
-
-The web page allows the creation of a topology for the facility to indicate the relation between the components.
-An example for DKRZ:
-
-\vspace*{-1em}
-
-\begin{center}
-\includegraphics[width=0.95\textwidth]{dkrz-site}
-\end{center}
-
+  \vspace*{1em}
+  
+  \includegraphics[width=\textwidth]{io500}
 \end{posterbox}
 
 
@@ -425,7 +425,8 @@ the relationship between storage and memory capacity:
   \begin{itemize}
   \item June'17, proposal for extension rules
   \end{itemize}
-\item Extending benchmarks, HPSL sites
+\item Extending schema
+\item More HPSL sites
 \item Support training and teaching for storage
 \end{itemize}
 \end{posterbox}
