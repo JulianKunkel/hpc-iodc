@@ -14,7 +14,7 @@ Besides his main goal to provide efficient and performance-portable I/O, his HPC
 
 # Secondary leaders
 Dr. Jay Lofstead, gflofst@sandia.gov, Sandia National Laboratories
-# Professional title: Principal Investigator (TODO check)
+# Professional title: Principal Member of Technical Staff
 ## BIO
 Dr. Jay Lofstead is a Principal Member of Technical Staff at Sandia National
 Laboratories in Albuquerque, New Mexico. Since 2010, Jay has been working on
@@ -26,26 +26,17 @@ workshop program committees.
 
 # Secondary leaders
 Dr. John Bent, jbent@cray.com, Cray
-# Professional title: TODO
+# Professional title: Director of Storage Architecture
 ## BIO
-TODO: Needs update for Cray
-As Chief Architect for Seagate Government Solutions, Dr. John Bent researches and designs storage systems necessary to support an exascale supercomputer. His prior work includes building several burst buffer prototypes while working for EMC and the PLFS virtual file system that achieved orders of magnitude bandwidth improvements for parallel writes to a single file while working for Los Alamos National Lab.
+As Director of Storage Architecture at Cray, Dr. John Bent researches and designs storage systems for exascale supercomputers. His prior work includes building several burst buffer prototypes, including the first burst buffer prototype in the DAOS project, and the PLFS virtual file system before that.
 
 # BOF Topic Area
 Data Analytics, Visualization & Storage
 
 # Abstract (Max 250 words)
-Due to the increasing complexity of HPC data management, activities in the storage research community have increased over the last few years.
-Therefore, analyzing and comparing performance of different HPC machines and storage systems has become even more complicated.
-The community driven development of an IO-500 benchmark has lead to the creation of a competitive list.
-The IO-500 benchmark consists of several data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications. While the initial list contains only 9 systems, we expect a rapid growth in the second list.
+Evolving and new storage technologies introduced over the last few years are causing increasing complexity for HPC data management. Hence, analyzing, comparing, or even predicting performance of different HPC machines and storage systems has become more complicated. To address this challenge, the community has developed a new composite benchmark that has lead to the creation of the competitive IO-500 list. The IO-500 benchmark consists of several data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications. In addition to offering different ways to compare storage systems, the list collects detailed information about storage system design to help system designers make informed trade-offs when specifying new storage requirements. While the initial list contains only 9 systems, we expect a rapid growth in the second list.
 
-The development of the benchmark has been powered by the Virtual Institute for I/O (VI4IO, http://vi4io.org), which
-provides a platform for I/O researchers and enthusiasts for exchanging information,
-fosters international collaboration in the field of high-performance I/O,
-and tracks the deployment of large storage systems by hosting information about high-performance storage systems.
-VI4IO provides a comprehensive data from sites, supercomputers and storage.
-This enables an in-depth analysis of various system characteristics.
+The development of the benchmark has been powered by the Virtual Institute for I/O (VI4IO, http://vi4io.org), which provides a platform for I/O researchers and enthusiasts for exchanging information, fosters international collaboration in the field of high-performance I/O, and tracks the deployment of large storage systems by hosting information about high-performance storage systems. VI4IO provides a comprehensive data from sites, supercomputers and storage. This enables an in-depth analysis of various system characteristics.
 
 The general purpose of this BoF is to foster the storage community in understanding the performance characteristics of HPC storage. The session leaders will give a series of talks followed by Q&A:
 1) The IO-500 approach is presented; this includes the release of the 2nd IO-500 list and providing highlights and insight.
@@ -73,11 +64,7 @@ Storage Technologies
 # Description of approach to make the BoF interactive
 
 Of the 60-minute session, the presentations will cover about 35 minutes.
-Between the talks we have time for Q&A, then we discuss with the attendees the roadmaps and feature requests.
-After the first presentation, we additionally encourage attendees to provide feedback about the execution of the benchmark.
-We will also quickly demonstrate how to setup and run the benchmark with a Q&A.
-After the second presentation, we will also conduct some surveys in the room in
-respect to issues in analyzing performance, reception of the benchmark, the need for standards and more.
+Between the talks we have time for Q&A, then we discuss with the attendees the roadmaps and feature requests. After the first presentation, we additionally encourage attendees to provide feedback about the execution of the benchmark. We will also quickly demonstrate how to setup and run the benchmark with a Q&A. After the second presentation, we will also conduct some surveys in the room in respect to issues in analyzing performance, reception of the benchmark, the need for standards and more.
 
 
 # Targeted Audience (max 100 words)
@@ -89,3 +76,5 @@ Interested domain scientists and computer scientists interested in discussing I/
 # Presentation slides
 
 I hereby declare the presentation slides publication through the ISC organizers: YES
+
+
