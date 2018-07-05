@@ -8,24 +8,22 @@
 \usepackage{color}
 
 \usepackage[hidelinks]{hyperref}
-\usepackage[capitalise,noabbrev]{cleveref} % Version 0.18.10
+\usepackage[capitalise,noabbrev]{cleveref}
 
 
 \begin{document}
 \mainmatter
 
 
-\author{Julian M. Kunkel, Jay Lofstead, Colin McMurtrie
+\author{Julian M. Kunkel, Jay Lofstead
 }
 
 \title{HPC I/O in the Data Center Workshop (HPC-IODC)}
 
 \institute{
-	Deutsches Klimarechenzentrum\\ 	Bundesstraße 45a\\	20146 Hamburg, Germany\\ \email{kunkel@dkrz.de}
+	University of Reading \\  Whiteknights \\ Reading RG6 6AY, UK\\ \email{j.m.kunkel@reading.ac.uk}
 	\and
 	Center for Computing Research\\ Sandia National Laboratories\\ Albuquerque, USA
-	\and
-	Swiss National Computing Center (CSCS) \\ Lugano, Switzerland
 }
 
 \maketitle{}
@@ -61,11 +59,21 @@ However, analysis conducted for HPC typically focuses on applications and not on
 Information about data center operational aspects is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
 
 In this workshop, we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues.
+This year, we worked closely together with the \textit{Workshop on Performance and Scalability of Storage Systems (WOPSSS)} in respect to the overall agenda organization and planned a joint morning session and split into two separate workshops in the afternoon.
 
 
 \section{Organization of the Workshop}
 
-\noindent The workshop content consisted of three topics:
+The workshop was organized by
+
+\begin{itemize}
+	\item Julian Kunkel (\textit{University of Reading, UK})
+	\item Jay Lofstead (\textit{Sandia National Lab, USA})
+\end{itemize}
+
+\noindent The workshop is supported by the Centre of Excellence in Simulation of Weather and Climate in Europe (ESiWACE) and the Virtual Institute for I/O (VI4IO)\footnote{\url{http://vi4io.org}}.
+
+\noindent The workshop covered three tracks:
 \begin{itemize}
   \item \textbf{Research paper presentations} -- authors needed to submit a paper regarding relevant research for I/O in the datacenter.
   \item \textbf{Talks from I/O experts} -- authors needed to submit a rough outline for the talk related to the operational aspects of the data center.
@@ -75,26 +83,36 @@ In this workshop, we bring together I/O experts from data centers and applicatio
 \noindent The CFP has been issued beginning of January.
 Important deadlines were:
 \begin{itemize}
-  \item Submission deadline: 2017-04-12 AoE
-  \item Author notification: 2017-04-25
-  \item Workshop: 2017-06-22
-  \item Camera-ready papers: 2017-07-22
+  \item Submission deadline: 2018-04-19  AoE
+  \item Author notification: 2018-05-04
+  \item Workshop: 2018-06-28
+  \item Camera-ready papers: 2018-07-28
 \end{itemize}
 
-From all submissions, the programm committee selected four talks from I/O experts and four research papers for presentation during the workshop.
+From all submissions, the program committee selected four talks from I/O experts and four research papers for presentation during the workshop.
 
 \subsection{Programm Committee}
 \begin{itemize}
-  \item Wolfgang Frings (\textit{Jülich Supercomputing Center, Germany})
-  \item Javier Garcia Blas (\textit{University Carlos III of Madrid, Spain})
-  \item  Rob Ross (\textit{Argonne National Laboratory, USA})
-  \item   Carlos Maltzahn (\textit{University of California, Santa Cruz, USA})
-  \item  Thomas Boenisch (\textit{HLRS, Stuttgart, Germany})
-  \item  Sai Narasimhamurthy (\textit{Seagate, United Kingdom})
-  \item Jean-Thomas Acquaviva (\textit{DDN, France})
-  \item  Julian Kunkel (\textit{DKRZ, Germany})
-  \item  Jay Lofstead (\textit{Sandia National Laboratory, USA})
-  \item  Colin McMurtrie (\textit{CSCS, Switzerland})
+\item Adrian Jackson (\textit{The University of Edinburgh})
+\item Ann Gentile (\textit{Sandia National Laboratories})
+\item Bing Xie (\textit{Oak Ridge National Lab})
+\item Brad Settleyer (\textit{Los Alamos National Laboratory})
+\item Feiyi Wang (\textit{Oak Ridge National Lab})
+\item George Markomanolis (\textit{King Abdullah University of Science and Technology})
+\item Javier Garcia Blas (\textit{University Carlos III of Madrid})
+\item Jay Lofstead (\textit{Sandia National Lab})
+\item Jean-Thomas Acquaviva (\textit{DDN})
+\item Jim Brandt (\textit{Sandia National Laboratories})
+\item Julian Kunkel (\textit{DKRZ})
+\item Matt Bryson (\textit{University of California, Santa Cruz})
+\item Michael Kluge (\textit{TU Dresden})
+\item Rob Ross (\textit{Argonne National Laboratory})
+\item Sandro Fiore (\textit{CMCC})
+\item Suren Byna (\textit{Lawrence Berkeley National Laboratory})
+\item Sven Breuner (\textit{ThinkparQ})
+\item Thomas Boenisch (\textit{HLRS})
+\item Tiago Quintino (\textit{ECMWF})
+\item Wolfgang Frings (\textit{Jülich Supercomputing Center})
 \end{itemize}
 
 
@@ -102,88 +120,91 @@ From all submissions, the programm committee selected four talks from I/O expert
 \section{Workshop Summary}
 \label{sec:summary}
 
-Throughout the day, on average 65 participants attended the workshop.
-We had a good mix of talks from I/O experts, data center relevant research followed by a short discussion.
+Throughout the day, on average more than 40 participants attended the workshop.
+We had a good mix of talks from I/O experts, data center relevant research and  two discussion sessions.
 A short summary of the presentations is given in the following.
-The slides of the presentations are available on the workshop's webpage: \\
-\url{http://wr.informatik.uni-hamburg.de/events/2017/iodc}.
+The slides of the presentations are available on the workshop's webpage:
+\url{https://hps.vi4io.org/events/2018/iodc}.
 
+After a joint welcome message of HPC-IODC with WOPSSS, an invited keynote was given by Phil Carns (Argonne National Laboratory).
+In his talk "Understanding and Tuning HPC I/O", the OODA (Observe, Orient, Decide, and Act) loop was used to structure and illustrate challenges and tools in respect to I/O monitoring and analysis.
 
 
 \subsection{Research Papers}
 
-The research session covered 5 accepted papers from 6 submissions:
+We received 10 research paper submissions, of which we accepted three papers for presentation and publication.
+Additionally, since analyzing and understanding I/O behavior and achieving consistent performance is still the top priority for researchers and data centers, we invited a community paper about Tools for Analyzing I/O.
+
+The research session covered these papers:
 \begin{itemize}
-\item In the first talk, Walker Haddock presented results of the efficiency for GPU offloaded erasure coding for Ceph.
-With a GPU plugin to support coding, a 1 GB/s full duplex performance is achievable for 100 shards.
-\item Eugen Betke introduced an online monitoring system for parallel I/O performance based on SIOX.
-The novelty of the approach is non-intrusive monitoring via an instrumented FUSE mountpoint allowing to cover \texttt{mmap()} operations.
-\item Jakob Lüttgau presented a simulator for hierarchical storage systems focusing on tape systems.
-Queuing systems are used to model I/O on the different storage tiers;
-the simulation allows to measure derived metrics in a fine-grained fashion for instance to analyzing waiting times (quality of service) and drive utilization.
-\item Jay Lofstead showed results for a large scale performance study for the IOR benchmark to identify performance variability and stragglers across the different OSTs.
-This demonstrated that for each measurement a small proportion of storage targets ($<$ 20\%) are slower than the others but the performance of storage targets changes over time changing the assignment slow/fast targets.
-\item The last talk of the research papers by Pilar Gomez-Sanchez introduced a framework to recover the access pattern of MPI parallel applications on a high-level.
-The methodology characterizes I/O behavior for individual application phases and introduces several derived metrics.
-A process starts another phase when it invokes an instrumented MPI function.
+\item \textbf{I/O Interference Alleviation on Parallel File Systems Using Server-Side QoS-Based Load-Balancing} by Yuichi Tsujita, Yoshitaka Furutani, Hajime Hida, Keiji Yamamoto, Atsuya Uno, and Fumichika Sueyasu.
+Yuichi Tsujita gave an overview of the K computer and described the data staging methods to improve I/O performance.
+A slow metadata performance during the staging procedure was investigated by analyzing various statistics from the metadata server.
+To improve the behavior of the system, a quality-of-service using fair-share was introduced at the server and analyzed.
+
+
+\item \textbf{Analyzing the I/O scalability of a Particle-in-Cell parallel code} by
+Sandra Mendez, Nicolay Hammer, and Anupam Karmakar.
+In the talk, Sandra described the systems at LRZ, the PiC code for which the performance analysis study was made.
+The authors modeled exhibited application behavior mathematically to understand the relation between assessed performance and application activity better.
+
+\item \textbf{Cost and Performance Modeling for Earth System Data Management and Beyond} by Jakob Luettgau and Julian Kunkel.
+In the talk, example graph based and tabular models for communicating and visualizing system characteristics were introduced.
+The notion of the talk was to identify possibilities to standardize such visualizations and discuss the potential benefits.
 \end{itemize}
 
 \subsection{Talks from Experts}
 
-The seven talks from experts included information about the site and typical
-application profiles but also contained information regarding I/O tools and strategies applied to mitigate pressing issues.
+The following talks from experts included some basic information about the site and typical application profiles but focuses on information regarding I/O tools and strategies applied to mitigate the pressing issues.
 
 \begin{itemize}
-\item
-In the first talk, Bryan Lawrence introduced the computation infrastructure in the UK with a focus on Earth-Science.
-He described the JASMIN infrastructure in detail which is managed and designed by STFC.
-A main distinction is that the infrastructure is continuously upgraded and the system architecture is developed by themself and not any vendor.
+\item First, Lionel Vincent introduced a strategy from Bull for \textbf{Self-Optimized Strategy for IO Accelerator Parametrization}.
+In this approach, the system learns to set tuning parameters that are unspecified by users.
+A gradient-free optimization method is used to determine the next candidate value for a parameter.
 
-\item Tiago Quintino shed light on the I/O challenges of ECMF.
-The center observes the need to adapt workflows to deal with paradigm shifts in technology.
-For example, to move from compute centric to a data centric paradigm minimizing data movement and shipping compute to data.
+\item Next, Patrick Widener talked about \textbf{Addressing data center storage diversity for high-performance computing applications using Faodel}.
+As data management service, it acts as a middleware between asynchronous or bulk-sychronous applications, resource manager, analysis, and data caching.
+The design and architecture is described together with use-cases.
 
-\item Roland Laifer introduces the HPC systems at KIT.
-Highlights of his talk are results on using Lustre on a wide area Infiniband connection, their analysis approach by
-capturing I/O statistics, and the approach for disaster recovery.
-
-\item Yuichi Tsujita presented the K Computer and storage systems.
-He focused on obstacles due to large scale parallelism: the metadata server load, client eviction (loss of server connections), and cross node interference.
-Several strategies to mitigate these issues are presented.
-
-\item Sandra Mendez introduces the LRZ HPC systems and then focuses on monitoring of I/O patterns.
-The usage of deployed analysis tools PerSyst and Darshan are illustrated on several applications.
-
-\item Clemens Grelck introduced the cHiPSet project which is an community effort that fosters collaboration in the area of HPC and Big Data.
-The activity is still open and new researcher may join the project:
-\url{http://www.chipset-cost.eu}
-
-\item Rosemary Francis presented the tool Mistral that profiles I/O of large scale applications to identify bad I/O patterns, foster optimizing and load balancing.
-The monitoring tool allows to detect rogue applications based on policies such as limiting storage capacity or metadata.
-A case study shows the effectiveness to tame non well-formed I/O.
+\item Then, Glenn Lockwood spoke about \textbf{Planning for the Future of Storage for HPC: 2020, 2025, and Beyond} for NERSC.
+Firstly, the current and planned infrastructure is introduced.
+An overall roadmap of NERSC is described discussing issues with the current and future storage hierarchy alongside with technological trends.
 
 
+\item Next, Stephen Simms described a collaboration with DDN for  \textbf{Lustre-On-ZFS}.
+After praising the benefits of ZFS a performance study is conducted.
+It turned out, that LDISKFS has compared to ZFS still a performance advantage in terms of the metadata operations getattr and setattr.
+
+
+\item Next, Simon Smart described the \textbf{Development of a high-performance distributed object-store for Numerical Weather Prediction and Climate model data}.
+After describing the ECMWF workflow, the MARS database is introduced that allows scientists to address data using scientific metadata from a fixed catalog.
+Additional insight about the usage of NVM is provided.
+
+\item Finally, Juan R. Herrera introduced approaches for \textbf{Exploiting Nonvolatile memory for HPC}. The talk illustrated the NextGenIO project which utilizing new hardware technology develops tools for analyzing I/O.
 \end{itemize}
 
-From the individual talks, it can be concluded that analyzing and understanding I/O behavior and achieving consistent performance is still the top priority for researchers and data centers.
 
-
-\subsection{Discussion round}
+\subsection{Discussion Sessions}
 
 The major distinguishing feature for this workshop compared to other venues is the discussion rounds.
 The opportunity for themed, open discussions about issues both pressing and relevant to the data center
 community facilitates sharing experiences, solutions, and problems.
 
-This year we focused on the community development of an IO-500 benchmark, see \url{http://io500.org}.
-The IO-500 benchmark consists of data and metadata benchmarks to identify performance boundaries for optimized and suboptimal applications.
-Each benchmark is run in an easy and hard mode to identify best-case performance for optimized applications and typical performance for applications with a suboptimal access pattern. Unlike other competitive benchmarks, ``gaming'' the system to
-get optimal results is encouraged because all configurations on how the performance results were achieved must be shared as part of any submission to the list. This transparency achieves three goals: 1) best practices for each different kind of storage on a platform are documented for users, 2) configurations and platform validation approaches can be better understood, and 3) a detailed catalog of storage options on various platforms over time with configurations for achieving specific performance is collected. The last of these will offer a long-term archive to understand the evolution of platform storage.
+In a first discussion, we focused on the possible community development of next generation semantic interfaces. Julian Kunkel provoked the community with a presentation about a possible approach that follows the successful approach of MPI which lead to a discussion how such a goal could be achieved.
+The community page is launched and supported by VI4IO, see \url{https://ngi.vi4io.org}.
 
-The Virtual Institute for I/O (VI4IO)\footnote{\url{http://vi4io.org}} supports this activity and tracks comprehensive data from sites, supercomputers and storage on the high-performance storage list.
-This data allows for an in-depth analysis of system characteristics and fosters the understanding of I/O systems.
 
-\bibliographystyle{splncs}
-\bibliography{literature}
+In the announced morning discussion, various topics have been briefly discussed.
 
+
+In the afternoon discussion, ...
+IO-500 benchmark, see \url{http://io500.org}.
+... Training ...
+
+
+
+
+\bibliographystyle{splncs03}
+\bibliography{literature}{}
 
 \end{document}
