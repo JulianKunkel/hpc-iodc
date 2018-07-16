@@ -121,6 +121,14 @@ From all submissions, the program committee selected four talks from I/O experts
 \label{sec:summary}
 
 Throughout the day, on average more than 40 participants attended the workshop.
+At a detailed level, we peaked at the following attendance in each of the 4 sessions (the first two
+shared with WOPSSS).
+\begin{itemize}
+\item First Session: 50
+\item After Morning Break: 45
+\item After Lunch: 30
+\item After Afternoon Break: 33
+\end{itemize}
 We had a good mix of talks from I/O experts, data center relevant research and  two discussion sessions.
 A short summary of the presentations is given in the following.
 The slides of the presentations are available on the workshop's webpage:
@@ -197,12 +205,36 @@ The community page is launched and supported by VI4IO, see \url{https://ngi.vi4i
 In the announced morning discussion, various topics have been briefly discussed.
 
 
-In the afternoon discussion, ...
+In the afternoon discussion, we focused on community benchmark acceptance for newer workloads. For example, IOR and mdtest are both accepted as ``good enough'' to represent scale up workloads (Modeling and Simulation). For scale out workloads (e.g., data analytics), there are a variety of benchmarks, but no good exemplars that can represent a wide variety of workloads. The discussion generated the following ideas:
+
+Pynamic - because lots of python is loaded on start for the analytics apps load\\
+Lots of opens and closes for the python packages
+
+MDWorkbench - best metadata latency testing tool on earth!
+
+LMDB - machine learning (mmap io)\\
+DASK - out of core Panda Frames (machine learning toolkits data representations)
+
+Graph 500 - 
+
+Miraculus - Glen does not recommend
+
+BLAST IOR trace - pattern matching genomics
+
+Seven dwarves of data anaytics - mostly compute
+
+Other thoughts brought up were:
+
+Good idea: collect open source educational tools, but might be too specific to a site\\
+Is there a good better IO tutorial?\\
+ATPESC has ANL IO tutorial materials, to a large degree
+
+How to run IO500 when it is a shared storage array for the data center rather than just full access for a platform?\\
+Splitting across platforms or just from a single platform?
+
+These ideas will be incorporated into the IO-500 site as a guide for evaluating platform performance.
+
 IO-500 benchmark, see \url{http://io500.org}.
-... Training ...
-
-
-
 
 \bibliographystyle{splncs03}
 \bibliography{literature}{}
