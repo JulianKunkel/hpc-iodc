@@ -121,7 +121,7 @@ From all submissions, the program committee selected four talks from I/O experts
 \label{sec:summary}
 
 Throughout the day, on average more than 40 participants attended the workshop.
-At a detailed level, we peaked at the following attendance in each of the 4 sessions (the first two
+At a detailed level, we peaked at the following attendance in each of the four sessions (the first two
 shared with WOPSSS).
 \begin{itemize}
 \item First Session: 50
@@ -200,41 +200,31 @@ community facilitates sharing experiences, solutions, and problems.
 
 In a first discussion, we focused on the possible community development of next generation semantic interfaces. Julian Kunkel provoked the community with a presentation about a possible approach that follows the successful approach of MPI which lead to a discussion how such a goal could be achieved.
 The community page is launched and supported by VI4IO, see \url{https://ngi.vi4io.org}.
-
-
 In the announced morning discussion, various topics have been briefly discussed.
 
+\paragraph{In the afternoon discussion,} we focused on community benchmark acceptance for newer workloads. For example, IOR and mdtest are both accepted as ``good enough'' to represent scale up workloads (Modeling and Simulation). For scale out workloads (e.g., data analytics), there are a variety of benchmarks, but no good exemplars that can represent a wide variety of workloads. The discussion generated the following ideas:
 
-In the afternoon discussion, we focused on community benchmark acceptance for newer workloads. For example, IOR and mdtest are both accepted as ``good enough'' to represent scale up workloads (Modeling and Simulation). For scale out workloads (e.g., data analytics), there are a variety of benchmarks, but no good exemplars that can represent a wide variety of workloads. The discussion generated the following ideas:
-
-Pynamic - because lots of python is loaded on start for the analytics apps load\\
-Lots of opens and closes for the python packages
-
-MDWorkbench - best metadata latency testing tool on earth!
-
-LMDB - machine learning (mmap io)\\
-DASK - out of core Panda Frames (machine learning toolkits data representations)
-
-Graph 500 - 
-
-Miraculus - Glen does not recommend
-
-BLAST IOR trace - pattern matching genomics
-
-Seven dwarves of data anaytics - mostly compute
-
+\begin{itemize}
+\item Pynamic - because lots of Python is loaded on start for the analytics apps load.
+Lots of opens and closes for the Python packages. This is important when providing software on the storage.
+\item MDWorkbench - metadata latency testing tool
+\item LMDB - machine learning (MMAP IO)
+\item DASK - out of core Panda Frames (machine learning toolkits data representations)
+\item  Graph 500
+\item  Miraculus - Glen does not recommend
+\item BLAST IOR trace - pattern matching genomics
+\item Seven dwarves of data anaytics - mostly compute
+\end{itemize}
 Other thoughts brought up were:
 
-Good idea: collect open source educational tools, but might be too specific to a site\\
-Is there a good better IO tutorial?\\
-ATPESC has ANL IO tutorial materials, to a large degree
+Good idea: collect open source educational tools, but might be too specific to a site.
+Is there a good public available IO tutorial?\\
+ATPESC has ANL IO tutorial materials, to a large degree.
 
-How to run IO500 when it is a shared storage array for the data center rather than just full access for a platform?\\
+How to run IO-500\footnote{For the IO-500 benchmark, see \url{http://io500.org}.} when it is a shared storage array for the data center rather than just full access for a platform?\\
 Splitting across platforms or just from a single platform?
 
 These ideas will be incorporated into the IO-500 site as a guide for evaluating platform performance.
-
-IO-500 benchmark, see \url{http://io500.org}.
 
 \bibliographystyle{splncs03}
 \bibliography{literature}{}
