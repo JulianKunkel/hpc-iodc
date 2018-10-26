@@ -1,0 +1,170 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{HPC I/O in the Data Center\\ {\normalsize 5th HPC-IODC Workshop}}
+\author{Julian Kunkel \and Jay Lofstead}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5em}
+
+\usepackage{url}
+
+\begin{document}
+
+\maketitle
+
+\section{Workshop Organizer Information}
+
+\subsection{Dr. Julian Kunkel}
+% Contact data as needed by the form
+% Dr. Julian Kunkel (DKRZ, Germany), kunkel@dkrz.de
+
+Dr. Kunkel is a Lecturer at the Computer Science Department at the University of Reading. Previously, he worked as postdoc in the research department of the German Climate Computing Center (DKRZ) that partners with the Scientific Computing group at the Universität Hamburg.
+He manages several research projects revolving around High-Performance Computing and particularly high-performance storage. Julian became interested in the topic of HPC storage in 2003, during his studies of computer science. Besides his main goal to provide efficient and performance-portable I/O, his HPC-related interests are: data reduction techniques, performance analysis of parallel applications and parallel I/O, management of cluster systems, cost-efficiency considerations, and software engineering of scientific software.
+
+\subsection{Dr. Jay Lofstead}
+% Contact data as needed by the form
+% Dr. Jay Lofstead (Sandia National Lab, USA), gflofst@sandia.gov
+
+Dr. Jay Lofstead is a Principal Member of Technical Staff at Sandia National
+Laboratories in Albuquerque, New Mexico. Since 2010, Jay has been working on
+HPC simulation workflows focusing on data management issues and as well as
+general I/O and storage issues for HPC.  His prior work includes the R\&D100
+Award winning ADIOS I/O componentization framework in use in more than 30
+production scientific simulations. He is a member of several conference and
+workshop program committees.
+
+\section{Abstract}
+Managing scientific data at large scale is challenging for scientists but also for the host data center.
+The storage and file systems deployed within a data center are expected to meet users' requirements for data integrity and high performance across heterogeneous and concurrently running applications.
+
+With new storage technologies and layers in the memory hierarchy, the picture is becoming murkier.
+To effectively manage the data load within a data center, I/O experts must understand how users expect to use these new storage technologies and what services they should provide in order to enhance user productivity. We seek to ensure a systems-level perspective is included in these discussions.
+
+In this workshop we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues.
+To focus on relevant aspects and streamline the discussion, a list of relevant topics is provided as common structure of the talks.
+We welcome submission of scientific papers with state-of-the-practice and specifically focused on I/O in the datacenter.
+For further information regarding participation, the topics and the mailing list, see the web page.
+
+\section{Keywords}
+Data center, File systems, Storage, Performance, Architecture
+
+\section{Workshop length}
+Full day.
+
+We aim to share the morning session with the I/O related WOPSSS workshop (see workshop format).
+
+\section{Workshop webpage}
+\url{https://hps.vi4io.org/events/2019/iodc}
+
+
+\section{Targeted audience}
+\begin{itemize}
+\item I/O experts from data centers and industry.
+\item Researchers/Engineers working on high-performance I/O for data centers.
+\item Interested domain scientists and computer scientists interested in discussing I/O issues.
+\item Vendors are also welcome, but their presentations must align with the same topics and not focus on commercial aspects.
+\end{itemize}
+
+
+
+
+\section{Estimated attendance}
+40-50
+
+\section{Early Acceptance}
+
+We will contribute to the joint Springer LNCS post-conference proceedings.
+
+
+\section{Workshop format}
+The workshop content is structured in three parts, firstly, in the morning we organize a shared session with the I/O related WOPSSS workshop, which covers a keynote, best papers and community activities.
+Ideally, the morning session is held in a larger room and the two parallel sessions for WOPSSS and HPC-IODC in the afternoon in regular rooms.
+Both workshop will run separately in the afternoon on a more specialized and narrow topic.
+The afternoon session of HPC-IODC puts an emphasis on data center issues and covers research paper presentations regarding state of the practice in the data center, discussion slots, and talks from I/O experts\footnote{
+There is only little overlap in respect to research papers as WOPSSS focus is on general performance analysis, tools, results and characterization.}.
+We will live broadcast the presentations on Youtube using the channel of the  Virtual Institute for I/O.
+
+Researchers and I/O experts can submit their proposals for a paper or talk according to a call for participation for papers and speakers.
+We provide a common list of topics to be addressed in each I/O expert's talk on our  webpage, such that the individual presentations are aligned.
+
+
+
+\section{Previous Instances}
+We held this workshop the first time at ISC 2015 with approximately 30 attendees, 10 invited presentations, and two discussion sessions.
+In 2016, the workshop format was changed, in addition to the expert talks, we added a research section allowing submission of short scientific papers and a keynote talk.
+The attendance to the workshop was similar to 2015, but finally we accepted four research papers.
+In 2017, more than 50 people attended the workshop; we accepted 5 of 6 papers.
+
+Last year, despite the large attendance of previous instances, we were forced by the organizers to run on a half day.
+Therefore, together with the I/O related workshop WOPSSS, we organized a full storage  day and a dedicated web site to promote simultaneously the two events: \url{https://isc-hpc-io.org}.
+The goal being to become the central event dedicated to storage and IO for the attendance of ISC.
+HPC-IODC run on the morning and WOPSSS during the afternoon in the same room.
+The talks were live-broadcasted on Youtube using the Virtual Institute for I/O channel.
+We believe the collaboration with WOPSSS is fruitful and beneficial for the community.
+
+\section{Expected outcome}
+1) The networking among the participants will be improved.
+
+2) We contribute a summarizing workshop paper to ISC's post-conference workshop proceedings in LNCS.
+
+\section{Details on the Call for Papers}
+
+This year, we also cover state-of-the-practice papers, aiming to grow the number of submissions and open the paper submission early for the submission of abstracts.
+We accept short papers with up to 12 pages (excl. references) in LNCS format.
+Our targeted proceedings are ISC's post-conference workshop proceedings in Springers LNCS.
+We will use Easy-chair for managing the proceedings and PC interaction.
+
+Expected number of papers: We expect 14 submissions\footnote{We have invited the significantly grown PC to submit papers and have external agreements.}.
+With an acceptance rate of 50\%, we aim to fill at least half of the presentation slots with papers.
+
+\paragraph{Schedule:}
+\begin{itemize}
+  \item Announcement/CfP: As soon as workshop notifications are sent by ISC
+  \item Submission deadline: 2019-04-12
+  \item Author notification: 2019-04-25
+  \item Workshop: 2019-06-21
+\end{itemize}
+Note that our call for speakers follows a similar schedule, but they'll have to submit only a talk abstract and a brief bio.
+
+Program committee:
+We grew the PC from last year significantly:
+\begin{itemize}
+  \item George Markomanolis (King Abdullah University of Science and Technology)
+  \item Tiago Quintino (ECMWF)
+  \item Bing Xie (Oak Ridge National Lab)
+  \item Wolfgang Frings (Jülich Supercomputing Center)
+  \item Ann Gentile (Sandia National Laboratories)
+  \item Michael Kluge (TU Dresden)
+  \item Feiyi Wang (Oak Ridge National Lab)
+  \item Javier Garcia Blas (University Carlos III of Madrid)
+  \item Thomas Boenisch (HLRS)
+  \item Rob Ross (Argonne National Laboratory)
+  \item Brad Settleyer (Los Alamos National Laboratory)
+  \item Suren Byna (Lawrence Berkeley National Laboratory)
+  \item Adrian Jackson (The University of Edinburgh)
+  \item Sandro Fiore (CMCC)
+  \item Jim Brandt (Sandia National Laboratories)
+  \item Jean-Thomas Acquaviva (DDN)
+\end{itemize}
+
+To increase the participation further, we firstly will actively invite representatives of different data centers and representatives of active workflow users/developers to give a talk and/or submit short papers regarding recent issues.
+Secondly, we will announce the workshop on typical mailing lists and send the call for participation.
+
+
+For further information, see:
+\url{https://hps.vi4io.org/events/2019/iodc}.
+
+%Guiding principles for inviting PC members are the geographically distribution of them and at most one PC per institution/organization.
+
+
+
+
+
+
+\end{document}
