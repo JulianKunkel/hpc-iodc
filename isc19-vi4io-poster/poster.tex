@@ -206,16 +206,17 @@ Everyone is welcome to add (own) group(s)!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{posterbox}[name=io500,column=1,span=2]{IO-500 Effort}
-We are discussing the creation of a benchmark to compare facilities and storage systems. This challenge is explored on our task page: \url{http://www.io500.org} and mailing list.
+Together with the community, we created the IO-500 benchmark to compare storage systems.
 
 \textbf{Goals for the benchmark:}
 
+\vspace*{-2em}
 \begin{minipage}{10.5cm}
-\begin{itemize}
+\begin{itemize} \compresslist
 \item Capture user-experienced performance % and honor system balance
 \item Reported performance is representative for:
-\vspace*{-0.5em}
-\begin{itemize}
+%\vspace*{-0.5em}
+\begin{itemize} \compresslist
 \item IOEasy: Applications with well optimized I/O patterns
 \item IOHard: Applications that require a random workload
 \item MDEasy: Metadata/small objects
@@ -226,17 +227,20 @@ We are discussing the creation of a benchmark to compare facilities and storage 
 \end{minipage}
 \qquad
 \begin{minipage}{4cm}
-\includegraphics[width=3.8cm]{border}
+  \includegraphics[width=3.8cm]{io-500-history.pdf}
+  \captionof{figure}{Growth of the list}
 \end{minipage}
 %\qquad
 %\begin{minipage}{6cm}
 %x
 %\end{minipage}
 
+\vspace*{-1.5em}
 
-Challenges:
+
+\textbf{Challenges:}
 \vspace*{-1em}
-\begin{itemize}
+\begin{itemize} \compresslist
 \item Representative: for optimized, naive I/O heavy workloads; and small objects
 \item Inclusive: cover various storage technology and non-POSIX APIs
 \item Trustworthy: representative results and prevent cheating
@@ -245,12 +249,13 @@ Challenges:
 
 \vspace*{-1em}
 
-Strategy:
+\textbf{Benefit for the community beyond the IO-500:}
 \vspace*{-1em}
-\begin{itemize}
-\item Build on existing benchmarks, support their development
-\item Plugin systems should allow for alternative storage technology
-\item Reporting one metric per benchmark, use geometric mean to combine them
+\begin{itemize} \compresslist
+\item Support the development of benchmarks that are used (IO-500 builds on standard benchmarks)
+\item Feed back best practices of tool usage (e.g., find) and benchmarks
+\item Aid detailed comparison of individual system characteristics while having a \textbf{ranked list}
+\item Share best-practices to obtain good performance
 \end{itemize}
 
 
@@ -260,9 +265,17 @@ Strategy:
 \begin{posterbox}[name=io500res,column=1,above=bottom,below=io500]{IO-500 List Nov 2018}
 
 There are several lists available, the \textbf{full list} contains all the results submitted for comparison while entries can enter a \textbf{ranked list} upon user choice and only one solution per system.
-There are several awards, the prestigious IO-500 award, for SC, a 10 node challenge.
 
-The ranked IO-500 list:
+There are several ranked lists with awards that stimulate aspects of I/O system development:
+\vspace*{-0.75em}
+\begin{itemize}\compresslist
+  \item The \textit{IO-500 award} for the fastest system in the ranked IO-500 list
+  \item The \textit{10 node challenge} fosters performance for small-scale runs
+\end{itemize}
+\vspace*{-1em}
+Further awards may follow.
+
+\textbf{The ranked IO-500 list:}
 
 %\includegraphics[width=\textwidth]{logo-io500.pdf}
 %\vspace*{1em}
@@ -280,13 +293,13 @@ It supports equations to compute derived metrics, here \textit{mdtest.easy\_writ
 
 The system displays a net graph for further distinguishing the best systems:
 
-\vspace*{-0.5em}
+\vspace*{-1.5em}
 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{io-500-net}
 \end{center}
 
-\vspace*{-0.5em}
+\vspace*{-1.5em}
 
 As we can see, this can be used to create arbitrary new rankings and investigate the data.
 
@@ -322,7 +335,17 @@ Supported components:
 \vspace*{-1em}
 
 The schema is under active development -- we aim to describe data center characteristics.
-The web page allows the creation of a topology for the facility to indicate the relation between the components -- ultimately multiple views will be created.
+The web page allows the creation of a topology for the facility to indicate the relation between the components -- ultimately multiple views will be created to show, e.g.:
+
+\vspace*{-1em}
+
+\begin{itemize} \compresslist
+  \item Logical network connectivity
+  \item Physical layout in racks
+  \item Building organization
+\end{itemize}
+
+\vspace*{-1em}
 
 
 \textbf{Metrics:} Most metrics can be determined without measurement and describe hardware and software characteristics that should be known to the site and vendor. A few metrics cover actually observed metadata and I/O performance, in this case the measurement procedure must be defined.
@@ -389,18 +412,21 @@ the relationship between storage and memory capacity:
 
 \begin{posterbox}[name=b4,column=3,below=awareness]{Ongoing Work}
 \begin{itemize}\compresslist
-\item Supporting standardization efforts
+\item IO-500 agenda:
+  \begin{itemize}
+  \item Updated execution rules
+  \item Integration of optional benchmarks
+  \item Continuous integration deployment \\
+        Including performance regression
+  \item Finalize vendor engagement program
+  \end{itemize}
+\item VI4IO standardization efforts
   \begin{itemize}\compresslist
-  \item IO-500 benchmark
   \item Data center representation
   \item Next-generation interfaces (NGI)
   \end{itemize}
-\item IO-500 agenda:
-  \begin{itemize}
-  \item June'18, proposal for extension rules
-  \end{itemize}
-\item Extending schema
-\item More HPSL sites
+\item Extended schema and alternative views
+\item More CDCL sites
 \item Support training and teaching for storage
 \end{itemize}
 \end{posterbox}
@@ -408,18 +434,38 @@ the relationship between storage and memory capacity:
 
 \begin{posterbox}[name=hpccertification,column=3,below=b4, above=bottom]{VI4IO, IO-500, and You}
 
+
+%\begin{minipage}{0.7\textwidth}
+You are welcome to join the mailing lists or our slack channel and participate!
+
+
 \begin{minipage}{0.7\textwidth}
-Content is under open licenses.
-You are welcome to join the mailing lists or participate!
+\Large Join us on Slack:
 \end{minipage}
 \begin{minipage}{0.29\textwidth}
-\includegraphics[width=\textwidth]{qr-code.jpg}
+\includegraphics[width=\textwidth]{qr-join-slack-com.pdf}
 \end{minipage}
 
-\vspace*{-0.5em}
+The content is under open licenses.
+%\end{minipage}
+%\begin{minipage}{0.29\textwidth}
+%\includegraphics[width=\textwidth]{qr-code.jpg}
+%\end{minipage}
 
 
-\huge \url{https://vi4io.org}
+More details on:
+
+\vspace*{-1.5em}
+
+\begin{itemize}
+  \compresslist
+  \Large
+  \item \url{https://vi4io.org}
+  \item \url{http://io-500.org}
+\end{itemize}
+
+
+
 \end{posterbox}
 
 
