@@ -1,0 +1,221 @@
+\documentclass{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+
+
+\begin{document}
+\mainmatter
+
+
+\author{Julian M. Kunkel, Jay Lofstead
+}
+
+\title{HPC I/O in the Data Center Workshop (HPC-IODC)}
+
+\institute{
+	University of Reading \\  Whiteknights \\ Reading RG6 6AY, UK\\ \email{j.m.kunkel@reading.ac.uk}
+	\and
+	Center for Computing Research\\ Sandia National Laboratories\\ Albuquerque, USA\\ \email{gflofst@sandia.gov}
+}
+
+\maketitle{}
+
+% -----------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Many public and privately funded data centers host supercomputers for running large scale simulations and analyzing experimental and observational data.
+These supercomputers run usually tightly coupled parallel applications that require hardware components that deliver the best performance.
+In contrast, commercial data centers, such as Facebook and Google, execute loosely coupled workloads with a broad assumption of regular failures.
+The dimension of the data centers is enormous.
+A 2013 article summarizes commercial data centers' dimensions\,\cite{data13}.
+It estimates, for example, that Facebook hosts around 100\,PB of storage and Google and Microsoft manage around 1 million servers each -- although the hardware is split among several physical data centers -- a modus operandi not suitable for HPC centers.
+With the hunger for information, the globally installed storage capacity increases exponentially and is expected to hit 7,235 Exabytes by 2017\,\cite{EXA13}.
+This trend is visible in the sales reports of companies such as the disk drive manufacturer Seagate. Within 5 years, they shipped 1 billion HDDs, which means 700.000 units every day\,\cite{SG14}.
+With state-of-the-art 8\,TB disks, this would already account for 5.5 exabyte of capacity by day.
+
+Management of the huge amount of data is vital for effective use of the contained information. However, with limited budgets, it is a daunting task for data center operators,
+especially as design and storage system required hardware depends heavily on the executed workloads.
+A co-factor of the increasing difficulty is the increase in complexity of the storage hierarchy with the adoption of SSD and memory class storage technology.
+The US Department of Energy recognizes the importance of data management, listing it among the top 10 research challenges for Exascale\,\cite{top14}. % the document says: “Affordability of data management, both procurement and operational, is a huge challenge.“
+
+There are several initiatives, consortia and special tracks in conferences that target RD\&E audiences.
+Examples are the Storage Networking Industry Association (SNIA) for enterprises, the
+Big Data and Extreme-Scale Computing (BDEC) initiative\footnote{\url{http://www.exascale.org/bdec/}}, the
+Exascale10 workgroup\,\cite{brinkmann14}, the Parallel Data Storage Workshop/Data Intensive Scalable Computing Systems
+(PDSW-DISCS) and the HEC FSIO workshop \cite{bancroft2009}.
+
+There are many I/O workloads studies and performance analysis reports for parallel I/O available.
+Additionally, many surveys of enterprise technology usage include predictions of analysis for future storage technology and the storage market such as\,\cite{idc1}.
+However, analysis conducted for HPC typically focuses on applications and not on the data center perspective.
+Information about data center operational aspects is usually described in file system specific user groups and meetings or described partially in research papers as part of the evaluation environment.
+
+In this workshop, we bring together I/O experts from data centers and application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R\&D to overcome these issues.
+This year, we merged in the \textit{Workshop on Performance and Scalability of Storage Systems (WOPSSS)}. WOPSSS merged their peer-reviewed papers into our program and opted to not have a separate workshop. This led to a full day program packed with research papers.
+
+
+\section{Organization of the Workshop}
+
+The workshop was organized by
+
+\begin{itemize}
+	\item Julian Kunkel (\textit{University of Reading, UK})
+	\item Jay Lofstead (\textit{Sandia National Labs, USA})
+	%\item Jean-Thomas Acquaviva (\textit{DDN})
+\end{itemize}
+
+\noindent The workshop is supported by the Centre of Excellence in Simulation of Weather and Climate in Europe (ESiWACE) and the Virtual Institute for I/O (VI4IO)\footnote{\url{http://vi4io.org}}.
+
+\noindent The workshop covered three tracks:
+\begin{itemize}
+  \item \textbf{Research paper presentations} -- authors needed to submit a paper regarding relevant research for I/O in the datacenter.
+  \item \textbf{Talks from I/O experts} -- authors needed to submit a rough outline for the talk related to the operational aspects of the data center.
+  \item A moderated \textbf{discussion} to identify key issues and potential solutions in the community.
+\end{itemize}
+
+\noindent The CFP has been issued beginning of January.
+Important deadlines were:
+\begin{itemize}
+  \item Submission deadline: 2019-04-19  AoE
+  \item Author notification: 2019-05-11
+  \item Workshop: 2019-06-21
+  \item Camera-ready papers: 2019-07-22
+\end{itemize}
+From all submissions, the program committee selected three  talks from I/O experts and eleven research papers for presentation during the workshop. This packed schedule limited open discussion time this year.
+
+\subsection{Programm Committee}
+\begin{itemize}
+
+\item Anthony Kougkas (\textit{Illinois Institute of Technology})
+\item Suzanne McIntosh (\textit{New York University})
+\item Jay Lofstead (\textit{Sandia National Laboratories})
+\item George S. Markomanolis (\textit{Oak Ridge National Laboratory})
+\item Suren Byna (\textit{Lawrence Berkeley National Laboratory})
+\item Adrian Jackson (\textit{The University of Edinburgh})
+\item Javier Garcia Blas (\textit{Carlos III University})
+\item Bing Xie (\textit{Oak Ridge National Lab})
+\item Sandro Fiore (\textit{CMCC})
+\item Glenn Lockwood (\textit{Lawrence Berkeley National Laboratory})
+\item Michael Kluge (\textit{TU Dresden})
+\item Jean-Thomas Acquaviva (\textit{DDN})
+\item Robert Ross (\textit{Argonne National Laboratory})
+\item Wolfgang Frings (\textit{Juelich Supercomputing Centre})
+\item Feiyi Wang (\textit{Oak Ridge National Laboratory})
+\item Thomas Boenisch (\textit{High performance Computing Center Stuttgart})
+\item Matthew Curry (\textit{Sandia National Laboratories})
+
+\end{itemize}
+
+\section{Workshop Summary}
+\label{sec:summary}
+
+Unfortunatetly, the workshop was assigned a room too small, particuarly considering the historical attendance numbers. In spite of it being standing room only, the workshop maintained, on average of 35 participants.
+\begin{itemize}
+\item First Session: 35
+\item After Morning Break: 35
+\item After Lunch: 35
+\item After Afternoon Break: 35
+\end{itemize}
+We had a good mix of talks from I/O experts, data center relevant research and  two discussion sessions.
+A short summary of the presentations is given in the following.
+The slides of the presentations are available on the workshop's webpage:
+\url{https://hps.vi4io.org/events/2019/iodc}.
+
+Given the number of research papers and expert talks accepted, we did not have time in the schedule for a keynote talk this year. We look forward to including a keynote talk again in the future. 
+
+
+\subsection{Research Papers}
+
+We have shifted our peer review process to be more community building oriented. We now shepherd all papers to help develop them so that they are acceptable for publication. If a paper cannot be successfully be revised in time for the workshop, it will be rejected. We find this approach is better for building an interactive community. We are exploring further enhancements to this process for next year that will be a more open, fully interactive process for quickly developing research papers into quality publishable results.
+
+The research papers covered the following topics:
+\begin{itemize}
+\item \textbf{Data-Centric I/O and Next Generation Interfaces} Julian Kunkel\\
+
+\item \textbf{Adventures in NoSQL for Metadata Management} Jay Lofstead, Ashleigh Ryan and Margaret Lawson\\
+
+\item \textbf{Towards High Performance Data Analytics for Climate Change} Sandro Fiore, Donatello Elia, Cosimo Palazzo, Fabrizio Antonio, Alessandro D’Anca, Ian Foster and Giovanni Aloisio\\
+
+\item \textbf{Mediating data center storage diversity in HPC applications with FAODEL} Patrick Widener, Craig Ulmer, Scott Levy, Gary Templet and Todd Kordenbrock\\
+
+\item \textbf{Lustre - the next 20 years} Andreas Dilger\\
+
+\item \textbf{Media-Based Work Unit} Jianshen Liu, Philip Kufeldt and Carlos Maltzahn\\
+
+\item \textbf{Tracking User-Perceived I/O Slowdown via Probing} Julian Kunkel and Eugen Betke\\
+
+\item \textbf{A quantitative approach to architecting all-flash Lustre file systems} Glenn Lockwood, Kirill Lozinskiy, Lisa Gerhardt, Ravi Cheema, Damian Hazen and Nicholas Wright\\
+
+\item \textbf{An Architecture for High Performance Computing and Data Systems using Byte-Addressable Persistent Memory} Adrian Jackson, Michele Weiland, Mark Parsons and Bernhard Homoelle\\
+
+\item \textbf{Predicting File Lifetimes With Convolutional Neural Networks} Florent Monjalet\\
+
+\item \textbf{Footprinting Parallel I/O - Machine Learning to Classify Applciation's I/O Behavior} Eugen Betke and Julian Kunkel\\
+
+\end{itemize}
+
+\subsection{Talks from Experts}
+
+The following talks from experts included some basic information about the site and typical application profiles but focuses on information regarding I/O tools and strategies applied to mitigate the pressing issues.
+
+\begin{itemize}
+
+\item \textbf{An overview of the storage and post-processing environment at RIKEN R-CCS} Jorji Nonaka\\
+
+\item \textbf{Running HPC-like workloads on the public cloud} Vinay Gaonkar\\
+
+\item \textbf{An I/O analysis of HPC workloads on CephFS and Lustre} Alberto Chiusole, Stefano Cozzini, D. van der Ster, M. Lamanna, G. Giuliani\\
+
+\end{itemize}
+
+\subsection{Discussion Sessions}
+
+Unlike previous years, with the merger of the WOPSSS papers, we did not have time for general discussion. Our very brief discussion at the end focused on the review process we are investigating for next year (and discussed above).
+
+\begin{comment}
+The major distinguishing feature for this workshop compared to other venues is the discussion rounds.
+The opportunity for themed, open discussions about issues both pressing and relevant to the data center
+community facilitates sharing experiences, solutions, and problems.
+
+In a first discussion, we focused on the possible community development of next generation semantic interfaces. Julian Kunkel provoked the community with a presentation about a possible approach that follows the successful approach of MPI which lead to a discussion how such a goal could be achieved.
+The community page is launched and supported by VI4IO, see \url{https://ngi.vi4io.org}.
+In the announced morning discussion, various topics have been briefly discussed.
+
+\paragraph{In the afternoon discussion,} we focused on community benchmark acceptance for newer workloads. For example, IOR and mdtest are both accepted as ``good enough'' to represent scale up workloads (Modeling and Simulation). For scale out workloads (e.g., data analytics), there are a variety of benchmarks, but no good exemplars that can represent a wide variety of workloads. The discussion generated the following ideas:
+
+\begin{itemize}
+\item Pynamic - because lots of Python is loaded on start for the analytics apps load.
+Lots of opens and closes for the Python packages. This is important when providing software on the storage.
+\item MDWorkbench - metadata latency testing tool
+\item LMDB - machine learning (MMAP IO)
+\item DASK - out of core Panda Frames (machine learning toolkits data representations)
+\item  Graph 500
+\item  Miraculus - Glen does not recommend
+\item BLAST IOR trace - pattern matching genomics
+\item Seven dwarves of data anaytics - mostly compute
+\end{itemize}
+Other thoughts brought up were:
+
+Good idea: collect open source educational tools, but might be too specific to a site.
+Is there a good public available IO tutorial?\\
+ATPESC has ANL IO tutorial materials, to a large degree.
+
+How to run IO-500\footnote{For the IO-500 benchmark, see \url{http://io500.org}.} when it is a shared storage array for the data center rather than just full access for a platform?\\
+Splitting across platforms or just from a single platform?
+
+These ideas will be incorporated into the IO-500 site as a guide for evaluating platform performance.
+
+\end{comment}
+
+\bibliographystyle{splncs03}
+\bibliography{literature}{}
+
+\end{document}
