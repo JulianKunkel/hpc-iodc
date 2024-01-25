@@ -1,0 +1,94 @@
+The 9th HPC I/O in the Data Center Workshop (HPC-IODC’23) in conjunction with
+ISC High Performance Digital. https://hps.vi4io.org/events/2023/iodc
+
+== Workshop overview ==
+
+Managing scientific data at a large scale is challenging for scientists but also for the host data center. The storage and file systems deployed within a data center are expected to meet users' requirements for data integrity and high performance across heterogeneous and
+concurrently running applications.
+
+With new storage technologies and layers in the memory hierarchy, the picture is
+becoming murkier. To effectively manage the data load within a data center, I/O
+experts must understand how users expect to use these new storage technologies
+and what services they should provide in order to enhance user productivity.
+We seek to ensure a systems-level perspective is included in these discussions.
+
+In this workshop, we bring together I/O experts from data centers and
+Application workflows to share current practices for scientific workflows, issues and
+obstacles for both hardware and the software stack, and R&D to overcome these
+issues.
+
+The workshop content is built on the following tracks:
+1) research paper track – requesting submissions regarding state-of-the-practice
+and research about I/O in the data center.
+2) talks from I/O experts – you'll need to submit an abstract for your talk.
+3) student mentoring sessions - short talks by students to get constructive feedback from the community to help the students advance in their studies.
+
+Contributions to the tracks are peer-reviewed and require submission of the
+respective research paper or idea for your presentation via Easychair:
+https://easychair.org/conferences/?conf=hpciodc23
+
+== Track: research papers ==
+
+We are excited to announce that research papers will be published in Springer
+Lecture Notes of Computer Science (LNCS) series and extended manuscripts in the new open-access Journal of High-Performance Storage (https://jhps.vi4io.org/) as well.
+
+The research track accepts papers covering state-of-the-practice and research dedicated to storage in the data center. We accept papers with up to 12 pages (excl. references) in LNCS format.
+
+For accepted papers, the length of the talk during the workshop depends on the controversiality and novelty of the approach - the length is decided based on the author's preference and reviewer feedback. All relevant work in the area of data center storage will be able to be published with our joint workshop proceedings, we just believe the available time should be used best to discuss controversial topics.
+
+=== Topics ===
+The relevant topics for papers cover all aspects of data center I/O including:
+ * Application workflows
+ * User productivity and costs
+ * Performance monitoring
+ * Dealing with heterogeneous storage
+ * Data management aspects
+ * Archiving and long-term data management
+ * State-of-the-practice (e.g., using or optimizing a storage system for data center workloads)
+ * Research that tackles data center I/O challenges
+* Cloud/Edge storage aspects
+
+=== Paper Deadlines ===
+* Submission deadline: 2023-03-06 AoE
+* Author notification: 2023-04-24
+* Pre-final submission: 2023-05-22
+* Workshop: 2023-05-25
+
+== Track: Talks by I/O experts ==
+
+The topics of interest in this track include but are not limited to:
+* A description of the operational aspects of your data center
+* A particular solution for certain data center workloads in production
+
+We also accept industry talks, given that they focus on operational issues
+and omit marketing.
+
+If you are interested in participating, please submit a short (1/2 page) abstract
+of your talk together with a (very) short Bio.
+
+Abstract Deadlines:
+* Submission deadline: 2023-04-24 AoE
+* Author notification: 2023-05-02
+
+== Student Mentoring Sessions ==
+To foster the next generation of data-related practitioners and researchers, students are encouraged to submit an abstract following the expert talk guidelines above as far as their research is aligned with these topics. At the workshop, the students will be given 10 minutes to talk about what they are working on followed by 10-15 minutes of conversation with the community present about how to further the work, what the impact could be, alternative research directions, and other topics to help the students progress in their studies.  We encourage students to work with a shepherd toward a JHPS paper illustrating their research based on the feedback obtained during the workshop.
+
+
+== Program committee ==
+
+  * Thomas Bönisch (HLRS)
+  * Suren Byna (Lawrence Berkeley National Laboratory)
+  * Matthew Curry (Sandia National Laboratories)
+  * Sandro Fiore (University of Trento)
+  * Javier Garcia Blas (Carlos III University)
+  * Stefano Gorini (Swiss National Supercomputing Centre)
+  * Adrian Jackson (The University of Edinburgh)
+  * Ivo Jimenez (University of California, Santa Cruz)
+  * George S. Markomanolis (AMD)
+  * Sandra Mendez (Barcelona Supercomputing Center (BSC))
+  * Feiyi Wang (Oak Ridge National Laboratory)
+
+== Organizers ==
+  * Julian Kunkel (Georg-August-Universität Göttingen/GWDG)
+  * Jay Lofstead (Sandia National Laboratories)
+  * Jean-Thomas Acquaviva (DDN)
