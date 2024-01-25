@@ -1,36 +1,27 @@
-The 10th HPC I/O in the Data Center Workshop (HPC-IODC’24) in conjunction with
-ISC High Performance Digital. https://hps.vi4io.org/events/2024/iodc
+The 10th HPC I/O in the Data Center Workshop (HPC-IODC’24) in conjunction with ISC High Performance. 
+https://hps.vi4io.org/events/2024/iodc
 
 == Workshop overview ==
 
 Managing scientific data at a large scale is challenging for scientists but also for the host data center. The storage and file systems deployed within a data center are expected to meet users' requirements for data integrity and high performance across heterogeneous and
 concurrently running applications.
 
-With new storage technologies and layers in the memory hierarchy, the picture is
-becoming murkier. To effectively manage the data load within a data center, I/O
-experts must understand how users expect to use these new storage technologies
-and what services they should provide in order to enhance user productivity.
-We seek to ensure a systems-level perspective is included in these discussions.
+With new storage technologies and layers in the memory hierarchy, the picture is becoming murkier. To effectively manage the data load within a data center, I/O experts must understand how users expect to use these new storage technologies and what services they should provide in order to enhance user productivity. We seek to ensure a systems-level perspective is included in these discussions.
 
 In this workshop, we bring together I/O experts from data centers and
-Application workflows to share current practices for scientific workflows, issues and
-obstacles for both hardware and the software stack, and R&D to overcome these
-issues.
+Application workflows to share current practices for scientific workflows, issues and obstacles for both hardware and the software stack, and R&D to overcome these issues.
 
 The workshop content is built on the following tracks:
-1) research paper track – requesting submissions regarding state-of-the-practice
-and research about I/O in the data center.
+1) research paper track – requesting submissions regarding state-of-the-practice and research about I/O in the data center.
 2) talks from I/O experts – you'll need to submit an abstract for your talk.
-3) student mentoring sessions - short talks by students to get constructive feedback from the community to help the students advance in their studies.
+3) student mentoring sessions - short talks by students to get  constructive feedback from the community to help the students advance in their studies.
 
-Contributions to the tracks are peer-reviewed and require submission of the
-respective research paper or idea for your presentation via Easychair:
+Contributions to the tracks are peer-reviewed and require submission of the respective research paper or idea for your presentation via Easychair:
 https://easychair.org/conferences/?conf=hpciodc24
 
 == Track: research papers ==
 
-We are excited to announce that research papers will be published in Springer
-Lecture Notes of Computer Science (LNCS) series and extended manuscripts in the new open-access Journal of High-Performance Storage (https://jhps.vi4io.org/) as well.
+We are excited to announce that research papers will be published in Springer Lecture Notes of Computer Science (LNCS) series and extended manuscripts in the new open-access Journal of High-Performance Storage (https://jhps.vi4io.org/) as well.
 
 The research track accepts papers covering state-of-the-practice and research dedicated to storage in the data center. We accept papers with up to 12 pages (excl. references) in LNCS format.
 
@@ -46,8 +37,9 @@ The relevant topics for papers cover all aspects of data center I/O including:
  * Archiving and long-term data management
  * State-of-the-practice (e.g., using or optimizing a storage system for data center workloads)
  * Research that tackles data center I/O challenges
-* Cloud/Edge storage aspects
-
+ * Cloud/Edge storage aspects
+ * Application of AI methods in storage
+ 
 === Paper Deadlines ===
 * Submission deadline: 2024-03-01 AoE
 * Author notification: 2024-03-29
@@ -60,11 +52,9 @@ The topics of interest in this track include but are not limited to:
 * A description of the operational aspects of your data center
 * A particular solution for certain data center workloads in production
 
-We also accept industry talks, given that they focus on operational issues
-and omit marketing.
+We also accept industry talks, given that they focus on operational issues and omit marketing.
 
-If you are interested in participating, please submit a short (1/2 page) abstract
-of your talk together with a (very) short Bio.
+If you are interested in participating, please submit a short (1/2 page) abstract of your talk together with a (very) short Bio.
 
 Abstract Deadlines:
 * Submission deadline: 2024-04-12 AoE
