@@ -1,4 +1,4 @@
-The 10th HPC I/O in the Data Center Workshop (HPC-IODC’23) in conjunction with
+The 10th HPC I/O in the Data Center Workshop (HPC-IODC’24) in conjunction with
 ISC High Performance Digital. https://hps.vi4io.org/events/2024/iodc
 
 == Workshop overview ==
